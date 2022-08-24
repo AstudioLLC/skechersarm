@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26" height="18" viewBox="0 0 26 18">
+  <defs>
+    <pattern id="pattern" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 318 159">
+      <image width="318" height="159" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACfCAMAAABX0UX9AAAAG1BMVEXZABLyqAAAM6DaABDRBBgAMZoAMqEANZjqpAvw6Fa3AAAA+UlEQVR4nO3QsQGCAAAEsRcU2H9iautrkxGyAQAAAAAAAAAAAAAAAAAAAP9Ogn0J9iPYQaAv0ZfoS/Ql+hJ9ib5EX6Iv0ZfoS/Ql+hJ9ib5EX6Iv0ZfoS/Ql+hJ9ib5EX6Iv0ZfoS/Ql+hJ9ib5EX6Iv0ZfoS/Ql+hJ9ib5EX6Iv0ZfoS/Ql+hJ9ib5EX6Iv2UWwm2APwT4E+hJ9ib5EX6Iv0ZfoS/Ql+hJ9ib5EX6Iv0ZfoS/Ql+hJ9ib5EX6Iv0ZfoS/Ql+hJ9ib5EX6Iv0ZfoS/Ql+hJ9ib5EX6Iv0ZfoS/Ql+hJ9ib5EX6Iv0ZfoS/Ql+hJ9ib7kBcct5c8K6C6yAAAAAElFTkSuQmCC"/>
+    </pattern>
+  </defs>
+  <g id="Без_названия" data-name="Без названия" stroke="#d5d5d5" stroke-width="1" fill="url(#pattern)">
+    <rect width="26" height="18" stroke="none"/>
+    <rect x="0.5" y="0.5" width="25" height="17" fill="none"/>
+  </g>
+</svg>
