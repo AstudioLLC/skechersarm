@@ -1,13 +1,13 @@
 <div class="col d-none d-xl-block category">
     <ul class="nav text-white">
         <li class="nav-item">
-            <a class="nav-link  ps-0 pe-2 fs-7 text-reset py-3" href="#">Կատալոգ</a>
+            <a class="nav-link  ps-0 pe-2 fs-7 text-reset py-3" style="cursor: pointer">Կատալոգ</a>
             <div class="mega-menu">
                 <div class="container position-relative bg-light pt-4">
                     <ul class="nav flex-column">
                         @foreach($frontCategories as $parentCategory)
                         <li class="nav-item">
-                            <a class="nav-link fs-6 fw-normal text-dark" aria-current="page" href="#">{{$parentCategory->name}}
+                            <a class="nav-link fs-6 fw-normal text-dark" aria-current="page" style="cursor: pointer" >{{$parentCategory->name}}
 {{--                                ({{ $parentCategory->products_count }})--}}
                             </a>
                             <div class="sub-mega-menu bg-white h-100 pt-3">

@@ -1,11 +1,22 @@
 <div>
-
     <div class="row">
-
-
         <div class="col-lg-12">
+            <div class=" row pb-3">
+                <form action=""  wire:submit.prevent="searchOrder" class="d-flex">
+                    <div class="col-2 m-2">
+                        <label for="start_date" class="">Start date</label>
+                        <input type="date"  class=" form-control bg-light border-0 p-2" wire:model.defer="start_date">
+                    </div>
+                    <div class="col-2 m-2">
+                        <label for="end_date">End date</label>
+                        <input type="date" class="form-control bg-light border-0 p-2" wire:model.defer="end_date">
+                    </div>
+                    <div class="col-3 m-2">
+                        <button type="submit" class="btn btn-dark" style="margin-top: 30px">Search</button>
+                    </div>
+                </form>
+            </div>
             <input type="text"  class="form-control" placeholder="Search" wire:model="searchTerm" />
-
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">{{$name}} Table</h5>
@@ -32,7 +43,7 @@
                             </tr>
                             </thead>
                             <tbody wire:sortable="updateOrdering" class="text-center">
-                            @foreach($items as $item)
+                            @foreach($items  as $item)
                                 <tr  wire:sortable.item="{{$item->id}}" wire:key="slide-{{$item->id}}" >
                                     <th scope="row" wire:sortable.handle>
                                         <i class="ni ni-bullet-list-67" id="bullet"></i>

@@ -58,7 +58,6 @@ class LoginController extends Controller
                 Auth::login($user, $request->get('remember'));
 
                 //Cart::instance('cart')->store(Auth::user()->email);
-
                 return redirect()->route('cabinet.settings');
             }
         }
