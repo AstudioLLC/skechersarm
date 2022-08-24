@@ -26,8 +26,8 @@
                         <div class="product-card-img position-relative">
                             <a href="{{ route('product', ['slug' => $item->slug]) }}">
                                 <div class="image-wrapper">
+                                    @if(count($item->gallery))
                                     <ul>
-                                        @if(count($item->gallery))
                                             @foreach($item->gallery as $gallery)
                                                 @once
                                                     <li>
@@ -38,12 +38,10 @@
                                                     <img src="{{asset('images/gallery')}}/{{$gallery->image}}" class="img-fluid" alt="{{$item->name}}" />
                                                 </li>
                                             @endforeach
-                                        @else
-                                            <li>
-                                                <img src="{{asset('images/products')}}/{{$item->image}}" class="img-fluid" alt="{{$item->name}}" />
-                                            </li>
-                                        @endif
                                     </ul>
+                                    @else
+                                            <img src="{{asset('images/products')}}/{{$item->image}}" class="img-fluid" alt="{{$item->name}}" />
+                                    @endif
                                 </div>
                             </a>
                             <div wire:ignore.self class="w-100 align-items-end product-card-buttons position-absolute bottom-0 start-50 translate-middle-x d-flex {{($item->sale_percent)? 'justify-content-between' : 'justify-content-end'}}">
@@ -75,14 +73,14 @@
                         </div>
                         <div class="product-body p-3">
                             <div class="product-title fs-6 my-2">
-                                <span class="text-primary">{{$item->name}}</span>
+                                <span class="text-primary">{{$item->categories->first()->parentCategory->parentCategory->name}}</span>
                             </div>
                             <div class="product-info fs-6 my-2">
-                                <p class="m-0">{!! $item->description !!}</p>
+                                <p class="m-0">{{$item->name}}</p>
                             </div>
                             <div class="product-price fs-6 my-2">
-                                <span class="text-decoration-line-through fs-7 text-muted">{{($item->sale_price)?$item->price :null}}</span>
-                                <span class="fs-6 fw-bold">{{($item->sale_price != null) ? $item->sale_price :$item->price}}</span>
+                                <span class="text-decoration-line-through fs-7 text-muted">{{($item->sale_price)?number_format($item->price). ' ֏' :null}} </span>
+                                <span class="fs-6 fw-bold">{{($item->sale_price != null) ? number_format($item->sale_price) :number_format($item->price)}} ֏</span>
                             </div>
                         </div>
                     </div>

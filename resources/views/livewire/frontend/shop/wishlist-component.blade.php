@@ -5,14 +5,14 @@
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item fs-7"><a href="/" class="text-reset text-decoration-none">Գլխավոր</a></li>
-                <li class="breadcrumb-item fs-7 active" aria-current="page">Նախընտրված ապրանքներ</li>
+                <li class="breadcrumb-item fs-7 active" aria-current="page">Նախընտրած ապրանքներ</li>
             </ol>
         </nav>
     </div>
     <!-- End Breadcrumb -->
     <div class="container">
         <div class="main-title justify-content-start my-1">
-            <h1 class="fs-4">Նախընտրված ապրանքներ</h1>
+            <h1 class="fs-4">Նախընտրած ապրանքներ</h1>
         </div>
         <div class="desctop-products d-none d-lg-block" >
             <div class="row m-0 gap-0">
@@ -23,8 +23,8 @@
                             <div class="product-card-img position-relative">
                                 <a href="{{ route('product', ['slug' => $item->slug]) }}">
                                     <div class="image-wrapper">
+                                        @if(count($item->gallery))
                                         <ul>
-                                            @if(count($item->gallery))
                                                 @foreach($item->gallery as $gallery)
                                                     @once
                                                         <li>
@@ -35,12 +35,10 @@
                                                         <img src="{{asset('images/gallery')}}/{{$gallery->image}}" class="img-fluid" alt="{{$item->name}}" />
                                                     </li>
                                                 @endforeach
-                                            @else
-                                                <li>
-                                                    <img src="{{asset('images/products')}}/{{$item->image}}" class="img-fluid" alt="{{$item->name}}" />
-                                                </li>
-                                            @endif
                                         </ul>
+                                        @else
+                                                <img src="{{asset('images/products')}}/{{$item->image}}" class="img-fluid" alt="{{$item->name}}" />
+                                        @endif
                                     </div>
                                 </a>
                                 <div wire:ignore.self class="w-100 align-items-end product-card-buttons position-absolute bottom-0 start-50 translate-middle-x d-flex {{($item->sale_percent)? 'justify-content-between' : 'justify-content-end'}}">
@@ -72,10 +70,10 @@
                             </div>
                             <div class="product-body p-3">
                                 <div class="product-title fs-6 my-2">
-                                    <span class="text-primary">{{$item->name}}</span>
+                                    <span class="text-primary">{{$item->categories->first()->parentCategory->parentCategory->name}}</span>
                                 </div>
                                 <div class="product-info fs-6 my-2">
-                                    <p class="m-0">{!! $item->description !!}</p>
+                                    <p class="m-0">{{$item->name}}</p>
                                 </div>
                                 <div class="product-price fs-6 my-2">
                                     <span class="text-decoration-line-through fs-7 text-muted">{{($item->sale_price)?number_format($item->price). ' ֏' :null}} </span>
@@ -85,6 +83,10 @@
                         </div>
                     </div>
                 @endforeach
+
+                @if(!count(Cart::instance('wishlist')->content()))
+                    <p>Նախընտրած ապրանքներ չկան</p>
+                    @endif
             </div>
         </div>
         <div class="mobile-products d-block d-lg-none">
@@ -97,8 +99,8 @@
                                 <div class="product-card-img position-relative">
                                     <a href="{{ route('product', ['slug' => $item->slug]) }}">
                                         <div class="image-wrapper">
+                                            @if(count($item->gallery))
                                             <ul>
-                                                @if(count($item->gallery))
                                                     @foreach($item->gallery as $gallery)
                                                         @once
                                                             <li>
@@ -109,12 +111,10 @@
                                                             <img src="{{asset('images/gallery')}}/{{$gallery->image}}" class="img-fluid" alt="{{$item->name}}" />
                                                         </li>
                                                     @endforeach
-                                                @else
-                                                    <li>
-                                                        <img src="{{asset('images/products')}}/{{$item->image}}" class="img-fluid" alt="{{$item->name}}" />
-                                                    </li>
-                                                @endif
                                             </ul>
+                                            @else
+                                                    <img src="{{asset('images/products')}}/{{$item->image}}" class="img-fluid" alt="{{$item->name}}" />
+                                            @endif
                                         </div>
                                     </a>
                                     <div class="w-100 align-items-end product-card-buttons position-absolute bottom-0 start-50 translate-middle-x d-flex {{($item->sale_percent)? 'justify-content-between' : 'justify-content-end'}}">
@@ -137,10 +137,10 @@
                                 </div>
                                 <div class="product-body p-3">
                                     <div class="product-title fs-6 my-2">
-                                        <span class="text-primary">{{\Illuminate\Support\Str::limit($item->name,25)}}</span>
+                                        <span class="text-primary">{{$item->categories->first()->parentCategory->parentCategory->name}}</span>
                                     </div>
                                     <div class="product-info fs-6 my-2">
-                                        <p class="m-0">{!! $item->description !!}</p>
+                                        <p class="m-0">{{$item->name}}</p>
                                     </div>
                                     <div class="product-price fs-6 my-2">
                                         <span class="text-decoration-line-through fs-7 text-muted">{{($item->sale_price)?number_format($item->price). ' ֏' :null}} </span>

@@ -21,8 +21,8 @@
                             <div class="product-card-img position-relative">
                                 <a href="{{ route('product', ['slug' => $item->slug]) }}">
                                     <div class="image-wrapper">
+                                        @if(count($item->gallery))
                                         <ul>
-                                            @if(count($item->gallery))
                                                 @foreach($item->gallery as $gallery)
                                                     @once
                                                         <li>
@@ -33,12 +33,10 @@
                                                         <img src="{{asset('images/gallery')}}/{{$gallery->image}}" class="img-fluid" alt="{{$item->name}}" />
                                                     </li>
                                                 @endforeach
-                                            @else
-                                                <li>
-                                                    <img src="{{asset('images/products')}}/{{$item->image}}" class="img-fluid" alt="{{$item->name}}" />
-                                                </li>
-                                            @endif
                                         </ul>
+                                        @else
+                                                <img src="{{asset('images/products')}}/{{$item->image}}" class="img-fluid" alt="{{$item->name}}" />
+                                        @endif
                                     </div>
                                 </a>
                                 <div class="w-100 align-items-end product-card-buttons position-absolute bottom-0 start-50 translate-middle-x d-flex {{($item->sale_percent)? 'justify-content-between' : 'justify-content-end'}}">
@@ -95,8 +93,8 @@
                                 <div class="product-card-img position-relative">
                                     <a href="{{ route('product', ['slug' => $item->slug]) }}">
                                         <div class="image-wrapper">
+                                            @if(count($item->gallery))
                                             <ul>
-                                                @if(count($item->gallery))
                                                     @foreach($item->gallery as $gallery)
                                                         @once
                                                             <li>
@@ -107,12 +105,10 @@
                                                             <img src="{{asset('images/gallery')}}/{{$gallery->image}}" class="img-fluid" alt="{{$item->name}}" />
                                                         </li>
                                                     @endforeach
-                                                @else
-                                                    <li>
-                                                        <img src="{{asset('images/products')}}/{{$item->image}}" class="img-fluid" alt="{{$item->name}}" />
-                                                    </li>
-                                                @endif
                                             </ul>
+                                            @else
+                                                    <img src="{{asset('images/products')}}/{{$item->image}}" class="img-fluid" alt="{{$item->name}}" />
+                                            @endif
                                         </div>
                                     </a>
                                     <div class="w-100 align-items-end product-card-buttons position-absolute bottom-0 start-50 translate-middle-x d-flex {{($item->sale_percent)? 'justify-content-between' : 'justify-content-end'}}">
