@@ -548,13 +548,13 @@ main{
         }
         .shopping-cart-title{
           display: grid;
-          grid-template-columns: 1fr 4fr 1fr 1fr 1fr 1fr 3fr;
+          grid-template-columns: 1fr 4fr 1fr 1fr 1fr 3fr;
           grid-column-gap: 20px;
         }
         .shopping-cart-info{
           display: grid;
-          grid-template-columns: 1fr 4fr 1fr 1fr 1fr 1fr 3fr;
-          grid-template-areas: 'img name price colour size quantity total';
+          grid-template-columns: 1fr 4fr 1fr 1fr 1fr 3fr;
+          grid-template-areas: 'img name price colour size total';
           grid-column-gap: 20px;
         }
         .shopping-cart-item-img{
