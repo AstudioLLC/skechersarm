@@ -13,7 +13,10 @@
                             <a href="tel:{{$information->phone}}" class="text-decoration-none text-reset">
                                 <div class="d-flex align-items-center">
                                     <div class="header-phone-icon me-2">
-                                        <img src="{{ asset('images/icons/header-phone.svg') }}" class="img-fluid" alt="">
+                                        <!-- <img src="{{ asset('images/icons/header-phone.svg') }}" class="img-fluid" alt=""> -->
+                                        <span class="fs-3 text-primary">
+                                            <i class="fa-solid fa-phone-arrow-down-left"></i>
+                                        </span>
                                     </div>
                                     <div class="header-phone-info d-none d-lg-block">
                                         <p class="mb-0 fs-7">Զանգերի կենտրոն</p>
@@ -55,7 +58,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <span class="fs-3 text-primary toggleDrawerr d-inline-block text-center" data-bs-toggle="offcanvas" data-bs-target="#drawerr" style="transform: rotateY(180deg); cursor: pointer;">
+                                <span class="fs-3 text-primary toggleDrawerr d-inline-block text-center" style="transform: rotateY(180deg); cursor: pointer;">
                                     <i class="fa-solid fa-bars-sort"></i>
                                 </span>
                             </li>
@@ -134,7 +137,7 @@
         </div>
     </header>
 
-    <nav id="drawerr" class="offcanvas drawerr--init d-xl-none" data-bs-backdrop="static" tabindex="-1">
+    <nav id="drawerr" class="drawerr--init d-xl-none" tabindex="-1">
         <div class="drawerr-container">
             <div class="drawerr-navigation-container"></div>
             <ul>
@@ -180,4 +183,5 @@
 <livewire:frontend.blocks.home.header-search-component/>
 </div>
 </nav>
+<div class="drawer-bacdrop"></div>
 <livewire:frontend.blocks.home.header-basket-modal/>

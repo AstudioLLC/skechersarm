@@ -73,7 +73,7 @@
             @foreach($headerPages as $headerPage)
 
                 <li class="nav-item">
-                    <a class="nav-link ps-0 pe-2 fs-7 text-reset py-3 @if(Request::getPathInfo() == '/'.$headerPage->url) cat-active @endif" href="{{$headerPage->route}}">
+                    <a class="nav-link ps-2 pe-2 fs-7 text-reset py-3 @if(Request::getPathInfo() == '/'.$headerPage->url) cat-active @endif" href="{{$headerPage->route}}">
 {{--                        @if($headerPage->image)--}}
 {{--                        <img src="{{asset('images/pages/')}}/{{$headerPage->image}}" alt="" class="me-2">--}}
 {{--                        @endif--}}

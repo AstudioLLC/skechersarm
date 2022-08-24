@@ -116,7 +116,7 @@
                             <a wire:click.prevent="removeFromWishList('{{$item->id}}')">
                                 <div class="product-card-buttons-icon">
                                     <span class="favorite-btn text-danger fs-5">
-                                        <i class="fa-solid fa-heart"></i>
+                                        <i class="fa-solid fa-heart fs-4"></i>
                                     </span>
                                 </div>
                             </a>
@@ -124,7 +124,7 @@
                             <a href="#" wire:click.prevent="addToWishList({{$item->id}},'{{$item->name}}',{{$item->price}})">
                                 <div class="product-card-buttons-icon">
                                     <span class="favorite-btn text-dark fs-5">
-                                        <i class="fa-light fa-heart"></i>
+                                        <i class="fa-light fa-heart fs-4"></i>
                                     </span>
                                 </div>
                             </a>
@@ -132,7 +132,7 @@
                             <a href="{{ route('product', ['slug' => $item->slug]) }}">
                                 <div class="product-card-buttons-icon">
                                     <span class="bag-btn text-dark fs-5">
-                                        <i class="fa-light fa-bag-shopping"></i>
+                                        <i class="fa-light fa-bag-shopping fs-4"></i>
                                     </span>
                                 </div>
                             </a>

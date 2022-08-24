@@ -8,7 +8,7 @@
     <div class="row m-0 gap-0">
         @foreach($items as $item)
         <div class="col-xl-2 col-lg-3 col-4 p-1">
-            <div class="product-card">
+            <div class="product-card d-flex flex-column">
                 <div class="product-card-img position-relative">
                     <a href="{{ route('product', ['slug' => $item->slug]) }}">
                         <div class="image-wrapper">
@@ -63,16 +63,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="product-body p-3">
-                    <div class="product-title fs-6 my-2">
+                <div class="product-body p-3 flex-fill pb-0">
+                    <div class="product-title fs-7 my-2">
                         <span class="text-primary">{{$item->categories->first()->parentCategory->parentCategory->name}}</span>
                     </div>
-                    <div class="product-info fs-6 my-2">
+                    <div class="product-info my-2">
                         <p class="m-0">{{$item->name}}</p>
                     </div>
+                </div>
+                <div class="px-3">
                     <div class="product-price fs-6 my-2">
-                        <span class="text-decoration-line-through fs-7 text-muted">{{($item->sale_price)?number_format($item->price). ' ֏' :null}} </span>
-                        <span class="fs-6 fw-bold">{{($item->sale_price != null) ? number_format($item->sale_price) :number_format($item->price)}} ֏</span>
+                        @if($item->sale_price)
+                        <span class="text-decoration-line-through fs-7 text-muted me-2">{{number_format($item->price)}} <small>֏</small></span>
+                        @endif
+                        <span class="fs-6 fw-bold">{{($item->sale_price != null) ? number_format($item->sale_price) :number_format($item->price)}} <small>֏</small></span>
                     </div>
                 </div>
             </div>
@@ -85,7 +89,7 @@
         <div class="swiper-wrapper pb-5">
             @foreach($items as $item)
             <div class="swiper-slide">
-                <div class="product-card">
+                <div class="product-card d-flex flex-column">
                     <div class="product-card-img position-relative">
                         <a href="{{ route('product', ['slug' => $item->slug]) }}">
                             <div class="image-wrapper">
@@ -116,7 +120,7 @@
                                 @if($favorites->contains($item->id))
                                 <a wire:click.prevent="removeFromWishList('{{$item->id}}')">
                                     <div class="product-card-buttons-icon">
-                                        <span class="favorite-btn text-danger">
+                                        <span class="favorite-btn text-danger fs-5">
                                             <i class="fa-solid fa-heart"></i>
                                         </span>
                                     </div>
@@ -124,7 +128,7 @@
                                 @else
                                 <a href="#" wire:click.prevent="addToWishList({{$item->id}},'{{$item->name}}',{{$item->price}})">
                                     <div class="product-card-buttons-icon">
-                                        <span class="favorite-btn text-dark">
+                                        <span class="favorite-btn text-dark fs-5">
                                             <i class="fa-light fa-heart"></i>
                                         </span>
                                     </div>
@@ -132,7 +136,7 @@
                                 @endif
                                 <a href="{{ route('product', ['slug' => $item->slug]) }}">
                                     <div class="product-card-buttons-icon">
-                                        <span class="bag-btn text-dark">
+                                        <span class="bag-btn text-dark fs-5">
                                             <i class="fa-light fa-bag-shopping"></i>
                                         </span>
                                     </div>
@@ -140,16 +144,20 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product-body p-3">
-                        <div class="product-title fs-6 my-2">
+                    <div class="product-body p-3 flex-fill pb-0">
+                        <div class="product-title fs-7 my-2">
                             <span class="text-primary">{{$item->categories->first()->parentCategory->parentCategory->name}}</span>
                         </div>
-                        <div class="product-info fs-6 my-2">
+                        <div class="product-info my-2">
                             <p class="m-0">{{$item->name}}</p>
                         </div>
+                    </div>
+                    <div class="px-3">
                         <div class="product-price fs-6 my-2">
-                            <span class="text-decoration-line-through fs-7 text-muted">{{($item->sale_price)?number_format($item->price). ' ֏' :null}} </span>
-                            <span class="fs-6 fw-bold">{{($item->sale_price != null) ? number_format($item->sale_price) :number_format($item->price)}} ֏</span>
+                            @if($item->sale_price)
+                            <span class="text-decoration-line-through fs-7 text-muted me-2">{{number_format($item->price)}} <small>֏</small></span>
+                            @endif
+                            <span class="fs-6 fw-bold">{{($item->sale_price != null) ? number_format($item->sale_price) :number_format($item->price)}} <small>֏</small></span>
                         </div>
                     </div>
                 </div>

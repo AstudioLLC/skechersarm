@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+:focus { outline: none !important;}
 html {
   font-size: calc(0.75rem + 0.4vw);
 }
@@ -84,6 +85,23 @@ main{
   -webkit-transform: translateX(0);
   transform: translateX(0);
 }
+.drawer-bacdrop{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: -1;
+  transition: all .35s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+.drawerr--open+.drawer-bacdrop{
+  z-index: 50;
+  opacity: 1;
+  visibility: visible;
+}
 .drawerr-multilevel ul li{
   background-color: #fff;
 }
@@ -154,6 +172,10 @@ main{
       border: 1px solid #e9e9e9;
 
     }
+    .product-body{
+      display: flex;
+      flex-direction: column;
+    }
     .product-card-img{
       max-height: 270px;
       min-height: 170px;
@@ -201,6 +223,10 @@ main{
       -webkit-line-clamp: 2; /* number of lines to show */
       line-clamp: 2; 
       -webkit-box-orient: vertical;
+      font-size: 0.9rem;
+    }
+    .product-price small{
+      font-size: 0.7rem;
     }
     .swiper{
       height: 100%;
@@ -285,7 +311,7 @@ main{
       left: 0;
       width: 100%;
       min-height: 510px;
-      top: calc(8rem - 0.1vw);
+      top: calc(8.5rem - 0.1vw);
     }
     .mega-menu .container{
       min-height: 510px;
