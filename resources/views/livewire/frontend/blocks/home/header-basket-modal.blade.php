@@ -1,8 +1,8 @@
 <div class="modal fade cart pe-0" id="cartModal" data-bs-backdrop="true" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" wire:ignore.self>
-    <div class="cart-modal modal-dialog modal-dialog-scrollable modal-fullscreen-md-down me-auto me-md-0 w-100">
-        <div class="modal-content">
-            <div class="modal-header">
-                <p class="modal-title h3" id="staticBackdropLabel">Ձեր զամբյուղը</p>
+    <div class="cart-modal modal-dialog modal-dialog-scrollable modal-fullscreen-md-down me-auto me-md-5 w-100">
+        <div class="modal-content rounded-0">
+            <div class="modal-header" style="border-bottom-style: dashed;">
+                <p class="modal-title fs-7" id="staticBackdropLabel">Ձեր զամբյուղը</p>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             @if(Cart::instance('cart')->count() > 0)
@@ -73,7 +73,7 @@
                 <a href="{{Auth::check() ? route('cabinet.cart') : route('login')}}" class="btn btn-primary w-100 rounded-1 fs-6">Պատվիրել</a>
             </div>
             @else
-            <h5 class="text-center mt-4 mb-2">Զամբյուղը դատարկ է</h5>
+            <p class="text-center fs-7 mt-4 mb-2">Զամբյուղը դատարկ է</p>
             @endif
         </div>
     </div>

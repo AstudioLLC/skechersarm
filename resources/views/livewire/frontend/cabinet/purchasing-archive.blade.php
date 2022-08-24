@@ -12,8 +12,10 @@
     <div class="container">
         <a href="#" class="text-reset text-decoration-none d-xl-none h3 mb-3 d-block" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCabinet" aria-controls="offcanvasCabinet">
             <div class="main-title justify-content-start my-1">
-                <img src="{{ asset('images/icons/cabinet/user-toggle.svg') }}" alt="">
-                <h1 class="fs-4 ps-0">Անձնական տվյալներ</h1>
+                <span class="fs-4">
+                    <i class="fa-light fa-user"></i>
+                </span>
+                <h1 class="fs-4 ps-0 mt-2">Անձնական տվյալներ</h1>
             </div>
         </a>
         <div class="row m-0">
