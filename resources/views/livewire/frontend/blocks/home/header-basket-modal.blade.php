@@ -26,15 +26,15 @@
                         </div>
                         <div class="col-6">
                             <div class="d-flex fs-7 justify-content-between">
-                                <span class="fw-bold">Կոդ։</span>
+                                <span class="fw-normal">Կոդ։</span>
                                 <span class="text-muted">#{{$item->model->article_1c}}</span>
                             </div>
                             <div class="d-flex fs-7 justify-content-between">
-                                <span class="fw-bold">Գույն։</span>
+                                <span class="fw-normal">Գույն։</span>
                                 <span class="text-muted">Մոխրագույն</span>
                             </div>
                             <div class="d-flex fs-7 justify-content-between">
-                                <span class="fw-bold">Չափ։</span>
+                                <span class="fw-normal">Չափ։</span>
                                 <span class="text-muted">37</span>
                             </div>
                             @if($item->model->sale_price)
