@@ -1,7 +1,6 @@
 <div>
     <div class="row pb-3">
         <div class="col-6">
-{{--            <a class="btn btn-light py-3 px-5 text-black w-100" href="{{route('admin.blog.create')}}">Create new {{$this->name}}</a>--}}
         </div>
     </div>
 
@@ -12,12 +11,12 @@
             <input type="text"  class="form-control" placeholder="Search" wire:model="searchTerm" />
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">{{$name}} Table</h5>
+{{--                    <h5 class="card-title">{{$name}} Table</h5>--}}
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
                             <tr class="text-center">
-                                <th scope="col">#</th>
+{{--                                <th scope="col">#</th>--}}
                                 <th scope="col">Barcode</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Status</th>
@@ -27,14 +26,14 @@
                             </thead>
                             <tbody wire:sortable="updateOrdering" class="text-center">
                             @foreach($items as $item)
-                                <tr wire:sortable.item="{{$item->id}}" wire:key="blog-{{$item->id}}" >
-                                    <td wire:sortable.handle>
-                                        <div class="d-flex px-2 py-1">
-                                            <div>
-                                                <i class="ni ni-bullet-list-67" id="bullet"></i>
-                                            </div>
-                                        </div>
-                                    </td>
+                                <tr wire:sortable.item="{{$item->id}}" wire:key="bonus-{{$item->id}}" >
+{{--                                    <td wire:sortable.handle>--}}
+{{--                                        <div class="d-flex px-2 py-1">--}}
+{{--                                            <div>--}}
+{{--                                                <i class="ni ni-bullet-list-67" id="bullet"></i>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </td>--}}
                                     <td>
                                       {{ $item->card_code }}
                                     </td>
@@ -63,7 +62,7 @@
 
                             </tbody>
                         </table>
-{{--                        {{ $items->links('livewire::livewire-pagination') }}--}}
+                        {{ $items->links('livewire::livewire-pagination') }}
                     </div>
                 </div>
             </div>
