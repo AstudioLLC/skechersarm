@@ -48,35 +48,35 @@
                             </div>
                             @foreach(Cart::instance('cart')->content() as $item)
                             <div class="shopping-cart-info align-items-end">
-                                <div class="shipping-cart-item mt-3 mt-lg-0 shop-col-img">
+                                <div class="shipping-cart-item d-flex d-sm-block align-items-center mt-3 mt-lg-0 shop-col-img">
                                     <img src="{{asset('images/products')}}/{{$item->model->image}}" alt="" class="shopping-cart-item-img">
                                 </div>
-                                <div class="shipping-cart-item mt-3 mt-lg-0 shop-col-name">
-                                    <p class="mb-3 d-block d-md-none">Ապրանքի անվանում</p>
+                                <div class="shipping-cart-item d-flex d-sm-block align-items-center mt-3 mt-lg-0 shop-col-name">
+                                    <p class="mb-0 d-block d-md-none me-3 me-sm-0">Ապրանքի անվանում</p>
                                     <p class="m-0">{{$item->model->name}}</p>
                                 </div>
-                                <div class="shipping-cart-item mt-3 mt-lg-0 shop-col-price">
-                                    <p class="mb-3 d-block d-md-none text-start text-sm-center">Գին</p>
+                                <div class="shipping-cart-item d-flex d-sm-block align-items-center mt-3 mt-lg-0 shop-col-price">
+                                    <p class="mb-0 d-block d-md-none me-3 me-sm-0 text-start text-sm-center">Գին</p>
                                     <div class="d-flex flex-row flex-sm-column align-items-center">
                                         <p class="m-0">{{($item->model->sale_price != null) ? $item->model->sale_price :$item->model->price}}  ֏</p>
                                     </div>
                                 </div>
-                                <div class="shipping-cart-item mt-3 mt-lg-0 shop-col-color">
-                                    <p class="mb-3 d-block d-md-none">Գույն</p>
+                                <div class="shipping-cart-item d-flex d-sm-block align-items-center mt-3 mt-lg-0 shop-col-color">
+                                    <p class="mb-0 d-block d-md-none me-3 me-sm-0">Գույն</p>
                                     <p class="m-0">Կանաչ</p>
                                 </div>
-                                <div class="shipping-cart-item mt-3 mt-lg-0 shop-col-size">
-                                    <p class="mb-3 d-block d-md-none">Չափս</p>
+                                <div class="shipping-cart-item d-flex d-sm-block align-items-center mt-3 mt-lg-0 shop-col-size">
+                                    <p class="mb-0 d-block d-md-none me-3 me-sm-0">Չափս</p>
                                     <p class="m-0">{{$item->options->size}}</p>
                                 </div>
                                 <!-- <div class="shipping-cart-item mt-3 mt-lg-0 shop-col-quantity">
-                                    <p class="mb-3 d-block d-md-none">Քանակ</p>
+                                    <p class="mb-0 d-block d-md-none me-3 me-sm-0">Քանակ</p>
                                     <p class="m-0">{{$item->qty}}</p>
                                     {{--<p>{{$orderItem->quantity ?? null}}</p>--}}
                                 </div> -->
-                                <div class="shipping-cart-item mt-3 mt-lg-0 shop-col-total">
-                                    <p class="mb-3 d-block d-md-none">Ընդհանուր գումար</p>
-                                    <div class="m-0 d-flex justify-content-between">{{$item->subtotal}} <a href="#" wire:click.prevent="destroy('{{$item->rowId}}')"><img src="{{asset('frontend/images/icons/cabinet/delete.svg')}}" alt=""></a></div>
+                                <div class="shipping-cart-item d-flex d-sm-block align-items-center mt-3 mt-lg-0 shop-col-total">
+                                    <p class="mb-0 d-block d-md-none me-3 me-sm-0">Ընդհանուր գումար</p>
+                                    <div class="m-0 d-flex justify-content-between"><span class="me-3">{{$item->subtotal}} </span><a href="#" wire:click.prevent="destroy('{{$item->rowId}}')"><img src="{{asset('frontend/images/icons/cabinet/delete.svg')}}" alt=""></a></div>
                                 </div>
                             </div>
 
