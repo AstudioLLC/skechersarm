@@ -177,6 +177,7 @@ payRadios.forEach((item)=>{
         }
         else{
             payOnline.style.display = 'none';
+
         }
     })
 })
