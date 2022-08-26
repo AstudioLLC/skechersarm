@@ -167,8 +167,8 @@
                             <div class="product-card-img position-relative">
                                 <a href="{{ route('product', ['slug' => $similar_product->slug]) }}">
                                     <div class="image-wrapper">
+                                        @if(count($similar_product->gallery))
                                         <ul>
-                                            @if(count($similar_product->gallery))
                                             @foreach($product->gallery as $gallery)
                                                 @once
                                                     <li>
@@ -179,12 +179,10 @@
                                                         <img src="{{asset('images/gallery')}}/{{$gallery->image}}" class="img-fluid" alt="{{$product->name}}" />
                                                     </li>
                                             @endforeach
-                                                @else
-                                                    <li>
-                                                        <img src="{{asset('images/products')}}/{{$similar_product->image}}" class="img-fluid" alt="{{$product->name}}" />
-                                                    </li>
-                                                @endif
                                         </ul>
+                                        @else
+                                                <img src="{{asset('images/products')}}/{{$similar_product->image}}" class="img-fluid" alt="{{$product->name}}" />
+                                        @endif
                                     </div>
 
                                 </a>
@@ -215,8 +213,10 @@
                                     <p class="m-0">{!!\Illuminate\Support\Str::limit($similar_product->description,25)!!}</p>
                                 </div>
                                 <div class="product-price fs-6 my-2">
-                                    <span class="text-decoration-line-through fs-7 text-muted">{{($similar_product->sale_price)?number_format($similar_product->price) . ' ֏':null}}</span>
-                                    <span class="fs-6 fw-bold">{{($similar_product->sale_price != null) ? number_format($similar_product->sale_price) :number_format($similar_product->price)}}  ֏</span>
+                                    @if($similar_product->sale_price)
+                                        <span class="text-decoration-line-through fs-7 text-muted me-2">{{number_format($similar_product->price)}} <small>֏</small></span>
+                                    @endif
+                                    <span class="fs-6 fw-bold">{{($similar_product->sale_price != null) ? number_format($similar_product->sale_price) :number_format($similar_product->price)}} <small>֏</small></span>
                                 </div>
                             </div>
                         </div>
@@ -241,16 +241,16 @@
                     <img src="{{asset('frontend/images/icons/swiper-products-arrow-right.svg')}}" alt="">
                 </div>
             </div>
-            <div class="swiper seenSlider">
-                <div class="swiper-wrapper pb-5">
+            <div class="swiper offerSlider">
+                <div class="swiper-wrapper pb-2">
                     @foreach($session_products as $session_product)
                     <div class="swiper-slide" >
                         <div class="product-card" >
                             <div class="product-card-img position-relative">
                                 <a href="{{ route('product', ['slug' => $session_product->slug]) }}">
                                     <div class="image-wrapper">
+                                        @if(count($session_product->gallery))
                                         <ul>
-                                            @if(count($session_product->gallery))
                                             @foreach($session_product->gallery as $gallery)
                                                 @once
                                                     <li>
@@ -261,12 +261,10 @@
                                                     <img src="{{asset('images/gallery')}}/{{$gallery->image}}" class="img-fluid" alt="{{$product->name}}" />
                                                 </li>
                                             @endforeach
-                                            @else
-                                                <li>
-                                                    <img src="{{asset('images/products')}}/{{$session_product->image}}" class="img-fluid" alt="{{$product->name}}" />
-                                                </li>
-                                            @endif
                                         </ul>
+                                        @else
+                                                <img src="{{asset('images/products')}}/{{$session_product->image}}" class="img-fluid" alt="{{$product->name}}" />
+                                        @endif
                                     </div>
                                 </a>
                                 <div class="w-100 align-items-end product-card-buttons position-absolute bottom-0 start-50 translate-middle-x d-flex {{($session_product->sale_percent)? 'justify-content-between' : 'justify-content-end'}}">
@@ -304,8 +302,10 @@
                                     <p class="m-0">{!! $session_product->description !!}</p>
                                 </div>
                                 <div class="product-price fs-6 my-2">
-                                    <span class="text-decoration-line-through fs-7 text-muted">{{($session_product->sale_price)?number_format($session_product->price) . ' ֏':null}}</span>
-                                    <span class="fs-6 fw-bold">{{($session_product->sale_price != null) ? number_format($session_product->sale_price) :number_format($session_product->price)}}  ֏</span>
+                                    @if($session_product->sale_price)
+                                        <span class="text-decoration-line-through fs-7 text-muted me-2">{{number_format($session_product->price)}} <small>֏</small></span>
+                                    @endif
+                                    <span class="fs-6 fw-bold">{{($session_product->sale_price != null) ? number_format($session_product->sale_price) :number_format($session_product->price)}} <small>֏</small></span>
                                 </div>
                             </div>
                         </div>

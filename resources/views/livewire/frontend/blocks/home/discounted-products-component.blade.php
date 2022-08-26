@@ -70,8 +70,10 @@
                         <p class="m-0">{{$item->name}}</p>
                     </div>
                     <div class="product-price fs-6 my-2">
-                        <span class="text-decoration-line-through fs-7 text-muted">{{($item->sale_price)?number_format($item->price). ' ֏' :null}} </span>
-                        <span class="fs-6 fw-bold">{{($item->sale_price != null) ? number_format($item->sale_price) :number_format($item->price)}} ֏</span>
+                        @if($item->sale_price)
+                            <span class="text-decoration-line-through fs-7 text-muted me-2">{{number_format($item->price)}} <small>֏</small></span>
+                        @endif
+                        <span class="fs-6 fw-bold">{{($item->sale_price != null) ? number_format($item->sale_price) :number_format($item->price)}} <small>֏</small></span>
                     </div>
                 </div>
             </div>
@@ -147,8 +149,10 @@
                         <p class="m-0">{{$item->name}}</p>
                     </div>
                     <div class="product-price fs-6 my-2">
-                        <span class="text-decoration-line-through fs-7 text-muted">{{($item->sale_price)?number_format($item->price). ' ֏' :null}} </span>
-                        <span class="fs-6 fw-bold">{{($item->sale_price != null) ? number_format($item->sale_price) :number_format($item->price)}} ֏</span>
+                        @if($item->sale_price)
+                            <span class="text-decoration-line-through fs-7 text-muted me-2">{{number_format($item->price)}} <small>֏</small></span>
+                        @endif
+                        <span class="fs-6 fw-bold">{{($item->sale_price != null) ? number_format($item->sale_price) :number_format($item->price)}} <small>֏</small></span>
                     </div>
                 </div>
             </div>
