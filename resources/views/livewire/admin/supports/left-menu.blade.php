@@ -224,6 +224,11 @@
                         </svg>
                     </div>
                     <span class="nav-link-text ms-1">Bonus card applications</span>
+                    @if($newBonusCount)
+                        <div class="pointer">
+                            <span>{{$newBonusCount}}</span>
+                        </div>
+                    @endif
                 </a>
             </li>
 

@@ -49,7 +49,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
 
     /* Special Route for Livewire with Localization routes fix  */
 
-//    Route::post('livewire/message/{name}', '\Livewire\Controllers\HttpConnectionHandler');
+    Route::post('livewire/message/{name}', '\Livewire\Controllers\HttpConnectionHandler');
 
     /* Special Routes for Socialite  */
 

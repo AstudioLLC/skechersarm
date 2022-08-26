@@ -45,7 +45,7 @@
                                 </div>
                             </a>
                             @else
-                            <a href="#" wire:click.prevent="addToWishList({{$item->id}},'{{$item->name}}',{{$item->price}})">
+                            <a  wire:click.prevent="addToWishList({{$item->id}},'{{$item->name}}',{{$item->price}})">
                                 <div class="product-card-buttons-icon">
                                     <span class="favorite-btn text-dark fs-5">
                                         <i class="fa-light fa-heart"></i>

@@ -56,7 +56,7 @@ class BonusComponent extends Component
             $sub_query->where('card_code', 'like', '%'.$this->searchTerm.'%');
             $sub_query->orWhere('name', 'like', '%'.$this->searchTerm.'%');
         })->paginate(15);
-
+        BonusCard::whereSeen(false)->update(['seen' => true]);
         return view('livewire.admin.bonus.bonus-component',compact('items'))->extends('layouts.admin');
     }
 }

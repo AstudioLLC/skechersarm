@@ -125,6 +125,7 @@
                             </thead>
                             <tbody class="text-center">
                             @foreach($order->orderItems as $key => $item)
+                              
                                 <tr>
                                     <th scope="row">
                                         {{$key + 1}}
