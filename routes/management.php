@@ -94,6 +94,7 @@ Route::prefix('management')->name('admin.')->middleware(['auth','has_role'])->gr
     Route::get('product/comments',\App\Http\Livewire\Admin\Products\CommentsComponent::class)->name('product.comment');
     Route::get('product/{id}',\App\Http\Livewire\Admin\Products\Show::class)->name('product.show');
     Route::get('product/edit/{id}',\App\Http\Livewire\Admin\Products\Edit::class)->name('product.edit');
+    Route::get('size-criteries/{product_id}',\App\Http\Livewire\Admin\Supports\SizeCriteries::class)->name('size.criteries');
 
 
 //    /* Special Routes for About us  */

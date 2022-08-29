@@ -23,18 +23,18 @@ trait Basket
 
     public function updated($fields)
     {
-            $this->validateOnly($fields,[
-                'size' => 'nullable',
-            ]);
+        $this->validateOnly($fields,[
+            'size' => 'nullable',
+        ]);
 
     }
     public function store($product_id,$product_name,$product_price)
     {
 
-        $hasSize = Product::sizeCriteries($product_id);
+        $hasSize = Product::hasSizes($product_id);
         $this->validate(
             [
-                'size' => count($hasSize) ? 'required' : 'nullable',
+                'size' => $hasSize ? 'required' : 'nullable',
             ],
         );
         Cart::instance('cart')->add($product_id . '-' . $this->size,$product_name,$this->qty,$product_price,['size' => $this->size])->associate(Product::class);

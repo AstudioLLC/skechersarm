@@ -30,6 +30,7 @@ class Create extends Component
     public $quantity ;
     public $is_new ;
     public $top_seller ;
+    public $offered;
     public $collection ;
     public $label ;
     public $brand_id;
@@ -86,6 +87,7 @@ class Create extends Component
             'quantity' => 'required',
             'is_new' => 'nullable',
             'top_seller' => 'nullable',
+            'offered' => 'nullable',
             'collection' => 'nullable',
             'other' => 'nullable',
             'label' => 'nullable',
@@ -117,6 +119,7 @@ class Create extends Component
                 'quantity' => 'required',
                 'is_new' => 'nullable',
                 'top_seller' => 'nullable',
+                'offered' => 'nullable',
                 'collection' => 'nullable',
                 'other' => 'nullable',
                 'label' => 'nullable',
@@ -151,6 +154,7 @@ class Create extends Component
         $item->quantity = $this->quantity;
         $item->is_new = $this->is_new;
         $item->top_seller = $this->top_seller;
+        $item->offered = $this->offered;
         $item->is_collection = $this->collection;
         $item->other = $this->other;
         $item->label = $this->label;

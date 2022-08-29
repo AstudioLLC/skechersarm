@@ -47,6 +47,7 @@ class Edit extends Component
     public $seo_title;
     public $seo_description;
     public $seo_keywords;
+    public $offered;
     public $can_add_sale_percent = false;
 
     public function mount($id)
@@ -66,6 +67,7 @@ class Edit extends Component
         $this->quantity = $product->quantity;
         $this->is_new = $product->is_new;
         $this->top_seller = $product->top_seller;
+        $this->offered = $product->offered;
         $this->collection = $product->collection;
         $this->other = $product->other;
         $this->label = $product->label;
@@ -182,6 +184,7 @@ class Edit extends Component
         $product->quantity = $this->quantity ;
         $product->is_new = $this->is_new ;
         $product->top_seller = $this->top_seller ;
+        $product->offered = $this->offered;
         $product->is_collection = $this->collection ;
         $product->other = $this->other ;
         $product->label = $this->label ;

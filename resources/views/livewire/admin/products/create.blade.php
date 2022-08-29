@@ -1,15 +1,15 @@
 <div >
-{{--    @if($errors->any())--}}
-{{--        <h1>{{$errors}}</h1>--}}
-{{--    @endif--}}
+    {{--    @if($errors->any())--}}
+    {{--        <h1>{{$errors}}</h1>--}}
+    {{--    @endif--}}
     <div wire:ignore.self>
-    @if($errors->any())
-        <div class="alert alert-dark" role="alert">
-            @foreach ($errors->all() as $error)
-                <p>{{ $error }}</p>
-            @endforeach
-        </div>
-    @endif
+        @if($errors->any())
+            <div class="alert alert-dark" role="alert">
+                @foreach ($errors->all() as $error)
+                    <p>{{ $error }}</p>
+                @endforeach
+            </div>
+        @endif
     </div>
     <form class="form-horizontal" enctype="multipart/form-data" wire:submit.prevent="store" >
         <div class="row" >
@@ -92,18 +92,18 @@
                     <input class="form-control" wire:model="sale_price" readonly>
                 </div>
             </div>
-{{--            <div class="col-2">--}}
-{{--                <div class="form-group ">--}}
-{{--                    <livewire:admin.supports.form-title name="Rating"/>--}}
-{{--                        <input type="text" class="form-control" wire:model.defer="rating" placeholder="Enter Rating">--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="col-2">--}}
-{{--                <div class="form-group ">--}}
-{{--                    <livewire:admin.supports.form-title name="Label"/>--}}
-{{--                    <input type="text" class="form-control" wire:model.defer="label" placeholder="Enter Label">--}}
-{{--                </div>--}}
-{{--            </div>--}}
+            {{--            <div class="col-2">--}}
+            {{--                <div class="form-group ">--}}
+            {{--                    <livewire:admin.supports.form-title name="Rating"/>--}}
+            {{--                        <input type="text" class="form-control" wire:model.defer="rating" placeholder="Enter Rating">--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
+            {{--            <div class="col-2">--}}
+            {{--                <div class="form-group ">--}}
+            {{--                    <livewire:admin.supports.form-title name="Label"/>--}}
+            {{--                    <input type="text" class="form-control" wire:model.defer="label" placeholder="Enter Label">--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
             <div class="col-2">
                 <div class="form-group ">
                     <livewire:admin.supports.form-title name="Barcode"/>
@@ -141,14 +141,14 @@
                     </div>
                 </div>
             </div>
-{{--            <div class="col-2">--}}
-{{--                <div class="form-group ">--}}
-{{--                    <livewire:admin.supports.form-title name="Top Seller"/>--}}
-{{--                    <div class="form-check form-switch active-toggle">--}}
-{{--                        <input class="form-check-input " wire:model.lazy="top_seller" type="checkbox" role="switch" value="">--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+            {{--            <div class="col-2">--}}
+            {{--                <div class="form-group ">--}}
+            {{--                    <livewire:admin.supports.form-title name="Top Seller"/>--}}
+            {{--                    <div class="form-check form-switch active-toggle">--}}
+            {{--                        <input class="form-check-input " wire:model.lazy="top_seller" type="checkbox" role="switch" value="">--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
             <div class="col-2">
                 <div class="form-group ">
                     <livewire:admin.supports.form-title name="Collection"/>
@@ -162,6 +162,14 @@
                     <livewire:admin.supports.form-title name="Is Sale"/>
                     <div class="form-check form-switch active-toggle">
                         <input class="form-check-input " wire:model.lazy="other" type="checkbox" role="switch" value="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="form-group ">
+                    <livewire:admin.supports.form-title name="Offered"/>
+                    <div class="form-check form-switch active-toggle">
+                        <input class="form-check-input " wire:model.lazy="offered" type="checkbox" role="switch" >
                     </div>
                 </div>
             </div>
@@ -201,20 +209,20 @@
                     <div class="col-md-6">
                         <select wire:model.defer="parent_category"  class="form-control">
                             <option  selected>Choose parent Category</option>
-                                @foreach($categories as $category)
-                                    <option  value="{{ $category->id }}">
-                                        @if(isset($category->parentCategory->parentCategory->parentCategory->name ))
-                                            {{$category->parentCategory->parentCategory->parentCategory->name  . ' / ' }}
-                                        @endif
-                                        @if(isset($category->parentCategory->parentCategory->name ))
-                                            {{$category->parentCategory->parentCategory->name  . ' / ' }}
-                                        @endif
-                                            @if(isset($category->parentCategory->name))
-                                                {{  $category->parentCategory->name  . ' / ' }}
-                                            @endif
-                                            {{ $category->name }}
-                                    </option>
-                                @endforeach
+                            @foreach($categories as $category)
+                                <option  value="{{ $category->id }}">
+                                    @if(isset($category->parentCategory->parentCategory->parentCategory->name ))
+                                        {{$category->parentCategory->parentCategory->parentCategory->name  . ' / ' }}
+                                    @endif
+                                    @if(isset($category->parentCategory->parentCategory->name ))
+                                        {{$category->parentCategory->parentCategory->name  . ' / ' }}
+                                    @endif
+                                    @if(isset($category->parentCategory->name))
+                                        {{  $category->parentCategory->name  . ' / ' }}
+                                    @endif
+                                    {{ $category->name }}
+                                </option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -270,32 +278,32 @@
             </div>
         </div>
         <div class="col-4">
-                <div class="form-group has-danger">
-                    <div class="form-group has-danger" wire:ignore>
-                        <livewire:admin.supports.form-title name="Seo Keywords"/>
-                        <five-tab-container >
-                            <!-- TAB CONTROLS -->
-                            <input type="radio" id="fivetabToggle01" name="five-tabs" value="1" checked />
-                            <label class="fivetabToggle01 intro" for="fivetabToggle01" checked="checked">English</label>
-                            <input type="radio" id="fivetabToggle02" name="five-tabs" value="2" />
-                            <label class="fivetabToggle02" for="fivetabToggle02">Armenian</label>
-                            <input type="radio" id="fivetabToggle03" name="five-tabs" value="3" />
-                            <label class="fivetabToggle03" for="fivetabToggle03">Russian</label>
-                            <five-tab-content>
-                                <input type="text" name="seo_keywords.en"   class="form-control  @error('seo_keywords.en') form-control-alternative is-invalid @enderror name-en" id="en4" wire:model.defer="seo_keywords.en" placeholder="Enter English Seo Keywords">
-                            </five-tab-content>
-                            <five-tab-content>
-                                <input type="text" name="seo_keywords.hy" class="form-control @error('seo_keywords.hy') form-control-alternative is-invalid @enderror name-hy" id="hy4" wire:model.defer="seo_keywords.hy" placeholder="Enter Armenian Seo Keywords">
-                            </five-tab-content>
-                            <five-tab-content>
-                                <input type="text" name="seo_keywords.ru" class="form-control @error('seo_keywords.ru') form-control-alternative is-invalid @enderror name-ru" id="ru4" wire:model.defer="seo_keywords.ru" placeholder="Enter Russian Seo Keywords">
-                            </five-tab-content>
+            <div class="form-group has-danger">
+                <div class="form-group has-danger" wire:ignore>
+                    <livewire:admin.supports.form-title name="Seo Keywords"/>
+                    <five-tab-container >
+                        <!-- TAB CONTROLS -->
+                        <input type="radio" id="fivetabToggle01" name="five-tabs" value="1" checked />
+                        <label class="fivetabToggle01 intro" for="fivetabToggle01" checked="checked">English</label>
+                        <input type="radio" id="fivetabToggle02" name="five-tabs" value="2" />
+                        <label class="fivetabToggle02" for="fivetabToggle02">Armenian</label>
+                        <input type="radio" id="fivetabToggle03" name="five-tabs" value="3" />
+                        <label class="fivetabToggle03" for="fivetabToggle03">Russian</label>
+                        <five-tab-content>
+                            <input type="text" name="seo_keywords.en"   class="form-control  @error('seo_keywords.en') form-control-alternative is-invalid @enderror name-en" id="en4" wire:model.defer="seo_keywords.en" placeholder="Enter English Seo Keywords">
+                        </five-tab-content>
+                        <five-tab-content>
+                            <input type="text" name="seo_keywords.hy" class="form-control @error('seo_keywords.hy') form-control-alternative is-invalid @enderror name-hy" id="hy4" wire:model.defer="seo_keywords.hy" placeholder="Enter Armenian Seo Keywords">
+                        </five-tab-content>
+                        <five-tab-content>
+                            <input type="text" name="seo_keywords.ru" class="form-control @error('seo_keywords.ru') form-control-alternative is-invalid @enderror name-ru" id="ru4" wire:model.defer="seo_keywords.ru" placeholder="Enter Russian Seo Keywords">
+                        </five-tab-content>
 
-                        </five-tab-container>
-                    </div>
-                    @error('seo_keywords') <span class="text-danger">{{ $message }}</span>@enderror
+                    </five-tab-container>
                 </div>
+                @error('seo_keywords') <span class="text-danger">{{ $message }}</span>@enderror
             </div>
+        </div>
 
         <button type="submit" class="btn btn-light py-3 px-5 text-black w-100">
             Save

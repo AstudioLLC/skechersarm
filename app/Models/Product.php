@@ -31,6 +31,7 @@ class Product extends Model
         'active',
         'is_new',
         'top_seller',
+        'offered',
         'is_collection',
         'ordering',
         'seo_title',

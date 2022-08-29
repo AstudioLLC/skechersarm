@@ -1,12 +1,12 @@
 <div>
     <div wire:ignore.self>
-    @if($errors->any())
-        <div class="alert alert-dark" role="alert">
-            @foreach ($errors->all() as $error)
-                <p>{{ $error }}</p>
-            @endforeach
-        </div>
-    @endif
+        @if($errors->any())
+            <div class="alert alert-dark" role="alert">
+                @foreach ($errors->all() as $error)
+                    <p>{{ $error }}</p>
+                @endforeach
+            </div>
+        @endif
     </div>
     <form class="form-horizontal" enctype="multipart/form-data" wire:submit.prevent="updateProduct">
         <div class="row">
@@ -89,18 +89,18 @@
                     <input class="form-control" wire:model="sale_price" readonly>
                 </div>
             </div>
-{{--            <div class="col-2">--}}
-{{--                <div class="form-group ">--}}
-{{--                    <livewire:admin.supports.form-title name="Rating"/>--}}
-{{--                    <input type="text" class="form-control" wire:model.defer="rating" placeholder="Enter Rating">--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="col-2">--}}
-{{--                <div class="form-group ">--}}
-{{--                    <livewire:admin.supports.form-title name="Label"/>--}}
-{{--                    <input type="text" class="form-control" wire:model.defer="label" placeholder="Enter Label">--}}
-{{--                </div>--}}
-{{--            </div>--}}
+            {{--            <div class="col-2">--}}
+            {{--                <div class="form-group ">--}}
+            {{--                    <livewire:admin.supports.form-title name="Rating"/>--}}
+            {{--                    <input type="text" class="form-control" wire:model.defer="rating" placeholder="Enter Rating">--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
+            {{--            <div class="col-2">--}}
+            {{--                <div class="form-group ">--}}
+            {{--                    <livewire:admin.supports.form-title name="Label"/>--}}
+            {{--                    <input type="text" class="form-control" wire:model.defer="label" placeholder="Enter Label">--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
             <div class="col-2">
                 <div class="form-group ">
                     <livewire:admin.supports.form-title name="Barcode"/>
@@ -138,15 +138,15 @@
                     </div>
                 </div>
             </div>
-{{--            <div class="col-2">--}}
-{{--                <div class="form-group ">--}}
-{{--                    <livewire:admin.supports.form-title name="Top Seller"/>--}}
-{{--                    <div class="form-check form-switch active-toggle">--}}
-{{--                        <input class="form-check-input " wire:model.lazy="top_seller" type="checkbox" role="switch" value="">--}}
-{{--                        @livewire('admin.supports.toggle-switch',  ['model' => $item, 'field' => 'top_seller'], key($item->id))--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+            {{--            <div class="col-2">--}}
+            {{--                <div class="form-group ">--}}
+            {{--                    <livewire:admin.supports.form-title name="Top Seller"/>--}}
+            {{--                    <div class="form-check form-switch active-toggle">--}}
+            {{--                        <input class="form-check-input " wire:model.lazy="top_seller" type="checkbox" role="switch" value="">--}}
+            {{--                        @livewire('admin.supports.toggle-switch',  ['model' => $item, 'field' => 'top_seller'], key($item->id))--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
             <div class="col-2">
                 <div class="form-group ">
                     <livewire:admin.supports.form-title name="Collection"/>
@@ -160,6 +160,14 @@
                     <livewire:admin.supports.form-title name="Is Sale"/>
                     <div class="form-check form-switch active-toggle">
                         <input class="form-check-input " wire:model.lazy="other" type="checkbox" role="switch"  checked value="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="form-group ">
+                    <livewire:admin.supports.form-title name="Offered"/>
+                    <div class="form-check form-switch active-toggle">
+                        <input class="form-check-input " wire:model.lazy="offered" type="checkbox" role="switch" @if($item->offered) checked @endif>
                     </div>
                 </div>
             </div>

@@ -80,6 +80,9 @@
                                         @livewire('admin.supports.toggle-switch',  ['model' => $item, 'field' => 'active'], key($item->id))
                                     </td>
                                     <td>
+                                        <a href="{{route('admin.size.criteries',['product_id' => $item->id])}}" target="_blank">
+                                            <i class="fa fa-asterisk" aria-hidden="true"></i>
+                                        </a>
                                         <a href="{{route('admin.product.criteries',['product_id' => $item->id])}}">
                                             <i class="fa fa-filter" aria-hidden="true"></i>
                                         </a>

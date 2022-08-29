@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\ToModel;
-use Maatwebsite\Excel\Concerns\WithHeadingRow;
+use Maatwebsite\Excel\Concerns\WithStartRow;
 
-class ProductsImport implements ToCollection, WithHeadingRow
+class ProductsImport implements ToCollection,WithStartRow
 {
     /**
      * @return int
@@ -30,27 +30,32 @@ class ProductsImport implements ToCollection, WithHeadingRow
             $description = '{"hy":"' . $row[5] . '","ru":"' . $row[6] . '","en":"' . $row[7] . '"}';
             $slug = Str::slug($row[2]) . '-'.$row[1];
 
-            DB::table('products')->updateOrInsert(
-                ['barcode' => $row[1]],
-                [
-                    'name' => $name,
-                    'article_1c' => $row[0],
-                    'description' => $description,
-                    'price' => $row[9],
-                    'slug' => $slug,
+
+            try {
+                DB::table('products')->updateOrInsert(
+                    ['barcode' => $row[1]],
+                    [
+                        'name' => $name,
+                        'article_1c' => $row[0],
+                        'description' => $description,
+                        'price' => $row[9],
+                        'slug' => $slug,
 //                    'sale_percent' => $row[14],
 //                    'sale_price' => $row[9] - ($row[9] * $row[14] / 100),
-                    'brand_id' => $row[14],
-                    'quantity' => $row[12],
-                    'created_at' => Carbon::now(),
-                    'updated_at' => Carbon::now(),
-                ]
-            );
-            $product = Product::whereBarcode($row[1])->first();
-            $this->updateRelations($product, $row);
+                        'brand_id' => $row[14],
+                        'quantity' => $row[12],
+                        'created_at' => Carbon::now(),
+                        'updated_at' => Carbon::now(),
+                    ]
+                );
+                $product = Product::whereBarcode($row[1])->first();
+                $this->updateRelations($product, $row);
 //            $this->updateCriterias($product, $row);
-        }
+            }catch (\Exception $e){
+                return $e->getMessage();
+            }
 
+        }
 
     }
 
