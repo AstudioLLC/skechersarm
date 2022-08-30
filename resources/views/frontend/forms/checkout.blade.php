@@ -80,7 +80,7 @@
             <div class="col-12 col-md-4">
                 <div class="form-group">
                     <label for="checkoutAddress">{{__('frontend.cart.Address')}}</label>
-                    <input type="text" class="form-control bg-light border-0 p-2 mt-2" id="checkoutAddress" placeholder="Tumanyan 42/1">
+                    <input type="text" class="form-control bg-light border-0 p-2 mt-2" id="checkoutAddress">
                 </div>
             </div>
         </div>

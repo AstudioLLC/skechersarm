@@ -43,6 +43,7 @@ class Create extends Component
         $city->save();
         $this->alert('success', 'Region been changed successfully');
         $this->saved = true;
+        return redirect()->to('management/delivery-cities/'.$this->region_id);
     }
 
     public function render()

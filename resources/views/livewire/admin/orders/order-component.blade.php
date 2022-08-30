@@ -19,7 +19,7 @@
             <input type="text"  class="form-control" placeholder="Search" wire:model="searchTerm" />
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">{{$name}} Table</h5>
+{{--                    <h5 class="card-title">{{$name}} Table</h5>--}}
                     <div class="table-responsive" style="overflow-y: hidden;">
                         <table class="table table-striped"
                                style="z-index: 1;
@@ -55,9 +55,11 @@
                                         {{ date_format($item->created_at, 'Y-m-d H:i') }}
                                     </td>
                                     <td>
+                                        @if(isset($item->user->id))
                                         <a href="{{route('admin.user.show',[ 'id'=>$item->user->id ])}}" target="_blank">
                                             {{$item->user->name ?? null}}
                                         </a>
+                                        @endif
                                     </td>
                                     <td>
                                         {{$item->subtotal. ' ֏' ?? null}}
@@ -92,11 +94,13 @@
                                         @endif
                                     </td>
                                     <td>
+
                                         <a target="_blank" href="{{route('admin.order.show',['order_id' => $item->id])}}">
                                             <i class="fa fa-eye"></i>
                                         </a>
                                     </td>
                                 </tr>
+
                             @endforeach
 
                             </tbody>

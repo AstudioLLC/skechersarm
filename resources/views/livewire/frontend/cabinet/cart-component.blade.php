@@ -58,7 +58,7 @@
                                 <div class="shipping-cart-item d-flex d-sm-block align-items-center mt-3 mt-lg-0 shop-col-price">
                                     <p class="mb-0 d-block d-md-none me-3 me-sm-0 text-start text-sm-center">{{__('frontend.cart.Price')}}</p>
                                     <div class="d-flex flex-row flex-sm-column align-items-center">
-                                        <p class="m-0">{{($item->model->sale_price != null) ? $item->model->sale_price :$item->model->price}}  ֏</p>
+                                        <p class="m-0">{{($item->model->sale_price != null) ? number_format($item->model->sale_price) :number_format($item->model->price)}}  <small>֏</small></p>
                                     </div>
                                 </div>
                                 <div class="shipping-cart-item d-flex d-sm-block align-items-center mt-3 mt-lg-0 shop-col-color">
@@ -76,7 +76,7 @@
                                 </div> -->
                                 <div class="shipping-cart-item d-flex d-sm-block align-items-center mt-3 mt-lg-0 shop-col-total">
                                     <p class="mb-0 d-block d-md-none me-3 me-sm-0">{{__('frontend.cart.Total amount')}}</p>
-                                    <div class="m-0 d-flex justify-content-between"><span class="me-3">{{$item->subtotal}} </span><a href="#" wire:click.prevent="destroy('{{$item->rowId}}')"><img src="{{asset('frontend/images/icons/cabinet/delete.svg')}}" alt=""></a></div>
+                                    <div class="m-0 d-flex justify-content-between"><span class="me-3">{{number_format($item->subtotal)}} <small>֏</small></span><a href="#" wire:click.prevent="destroy('{{$item->rowId}}')"><img src="{{asset('frontend/images/icons/cabinet/delete.svg')}}" alt=""></a></div>
                                 </div>
                             </div>
 

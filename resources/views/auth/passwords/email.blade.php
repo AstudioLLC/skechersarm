@@ -15,7 +15,7 @@
                 <p class="fs-7 text-muted mb-5">{{__('auth.email.Send the password reset link')}}</p>
                 @if (session('status'))
                      <div class="alert alert-success" role="alert">
-                         {{ session('status') }}
+                         {{ __('auth.email.We have emailed your password reset link') }}
                      </div>
                 @endif
 

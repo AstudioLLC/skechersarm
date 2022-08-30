@@ -27,9 +27,11 @@
                                         {{$key+1}}
                                     </th>
                                     <td>
+                                        @if(isset($item->user->id))
                                         <a href="{{route('admin.user.show',[ 'id'=>$item->user->id ])}}" target="_blank">
                                             {{$item->user->name ?? null}}
                                         </a>
+                                        @endif
                                     </td>
                                     <td>
                                         {{$item->subtotal. ' ֏' ?? null}}
@@ -38,9 +40,9 @@
                                         {{$item->created_at}}
                                     </td>
                                     <td>
-                                        <a target="_blank" href="{{route('admin.fast.order.show',['order_id' => $item->id])}}">
-                                            <i class="fa fa-eye"></i>
-                                        </a>
+{{--                                        <a target="_blank" href="{{route('admin.fast.order.show',['order_id' => $item->id])}}">--}}
+{{--                                            <i class="fa fa-eye"></i>--}}
+{{--                                        </a>--}}
                                         <a href="" wire:click.prevent="delete({{$item->id}})" >
                                             <i class="fa fa-trash" title="Delete"></i>
                                         </a>

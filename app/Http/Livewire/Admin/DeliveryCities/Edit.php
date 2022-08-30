@@ -54,10 +54,10 @@ class Edit extends Component
         $city->price = $this->price;
 
         $city->save();
-        Artisan::call('cache:clear');
+//        Artisan::call('cache:clear');
         $this->alert('success', 'City been changed successfully');
         $this->saved = true;
-        return redirect()->route('admin.delivery-cities');
+
     }
     public function render()
     {

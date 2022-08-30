@@ -51,6 +51,7 @@ return [
         'New Password' => '',
         'Confirm Password' => '',
         'Confirm' => 'Հաստատել',
+        'We have emailed your password reset link' => 'Մենք էլփոստով ուղարկել ենք ձեր գաղտնաբառը վերականգնելու հղումը',
 
     ],
 ];

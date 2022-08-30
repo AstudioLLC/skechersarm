@@ -28,7 +28,8 @@
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="mb-4">
-                        <input type="text" class="form-control rounded-0 border-0 border-bottom @error('email') is-invalid @enderror"  name="email" value="{{ old('email') }}" required  placeholder="{{__('auth.login.Name')}}" style="font-size: 14px;">
+                        <input type="text" class="form-control rounded-0 border-0 border-bottom @error('email') is-invalid @enderror"  name="email" value="{{ old('email') }}"   placeholder="{{__('auth.login.Name')}}" style="font-size: 14px;">
+                        @error('email') <span class="text-danger">{{ $message }}</span>@enderror
                     </div>
                     <div class="mb-4">
                         <input type="password" class="form-control rounded-0 border-0 border-bottom" name="password" placeholder="{{__('auth.login.Password')}}" style="font-size: 14px;">

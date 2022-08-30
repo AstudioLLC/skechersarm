@@ -46,7 +46,16 @@ class LoginController extends Controller
         $credentials = $request->validate([
             'email' => 'required|email',
             'password' => 'required',
-        ]);
+        ],
+        [
+            'email.email' => 'Введите правильную Эл.почту',
+//            'email.required' => 'Введите Эл.почту',
+//            'password.required' => ' Введите Пароль.',
+
+        ]
+
+        );
+
         $user = Auth::getProvider()->retrieveByCredentials($credentials);
 
         if (Auth::attempt($credentials)) {

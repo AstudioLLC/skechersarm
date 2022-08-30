@@ -39,7 +39,7 @@ Route::get('test',function (){
 
 /* Special for Auth Routes  */
 
-Auth::routes(['verify' => true]);
+
 
 
 /* Special Routes for Frontend Page with Localization */
@@ -47,6 +47,7 @@ Auth::routes(['verify' => true]);
 
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect']],function() {
 
+    Auth::routes(['verify' => true]);
     /* Special Route for Livewire with Localization routes fix  */
 
     Route::post('livewire/message/{name}', '\Livewire\Controllers\HttpConnectionHandler');
