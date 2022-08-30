@@ -130,7 +130,7 @@
                     <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
                 <![endif]--><table role="presentation" cellpadding="0" cellspacing="0" style="font-size:0px;width:100%;background:#7289DA url(https://cdn.discordapp.com/email_assets/f0a4cc6d7aaa7bdf2a3c15a193c6d224.png) top center / cover no-repeat;" align="center" border="0" background="https://cdn.discordapp.com/email_assets/f0a4cc6d7aaa7bdf2a3c15a193c6d224.png"><tbody><tr><td style="text-align:center;vertical-align:top;direction:ltr;font-size:0px;padding:57px;"><!--[if mso | IE]>
                             <table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td style="vertical-align:undefined;width:640px;">
-                            <![endif]--><div style="cursor:auto;color:white;font-family:Whitney, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;font-size:36px;font-weight:600;line-height:36px;text-align:center;">Welcome to Skechers!</div><!--[if mso | IE]>
+                            <![endif]--><div style="cursor:auto;color:white;font-family:Whitney, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;font-size:36px;font-weight:600;line-height:36px;text-align:center;">{{__('auth.verify.Welcome')}}</div><!--[if mso | IE]>
                             </td></tr></table>
                             <![endif]--></td></tr></tbody></table><!--[if mso | IE]>
                 </v:textbox>
@@ -147,14 +147,14 @@
                             <![endif]--><div aria-labelledby="mj-column-per-100" class="mj-column-per-100 outlook-group-fix" style="vertical-align:top;display:inline-block;direction:ltr;font-size:13px;text-align:left;width:100%;"><table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0"><tbody><tr><td style="word-break:break-word;font-size:0px;padding:0px 0px 20px;" align="left"><div style="cursor:auto;color:#737F8D;font-family:Whitney, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;font-size:16px;line-height:24px;text-align:left;">
                                                 <p><img src="https://cdn.discordapp.com/email_assets/127c95bbea39cd4bc1ad87d1500ae27d.png" alt="Party Wumpus" title="None" width="500" style="height: auto;"></p>
 
-                                                <h2 style="font-family: Whitney, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;font-weight: 500;font-size: 20px;color: #4F545C;letter-spacing: 0.27px;">Բարի գալուստ Skechersarm.am {{ auth()->user()->name ?? null }}</h2>
-                                                <p>Գրանցման հաստատումն անցնելու համար խնդրում ենք ստուգել Ձեր էլ․ Հասցեն</p>
+                                                <h2 style="font-family: Whitney, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;font-weight: 500;font-size: 20px;color: #4F545C;letter-spacing: 0.27px;">{{__('auth.verify.Welcome to Skechersarm')}} {{ auth()->user()->name ?? null }}</h2>
+                                                <p>{{__('auth.verify.Please check your email')}}</p>
 
                                             </div></td></tr><tr><td style="word-break:break-word;font-size:0px;padding:10px 25px;" align="center"><table role="presentation" cellpadding="0" cellspacing="0" style="border-collapse:separate;" align="center" border="0"><tbody><tr><td style="border:none;border-radius:3px;color:white;cursor:auto;padding:15px 19px;" align="center" valign="middle" bgcolor="#7289DA">
                                                         <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
                                                             @csrf
                                                             <button style="border:none;text-decoration:none;line-height:100%;background:#7289DA;color:white;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:15px;font-weight:normal;text-transform:none;margin:0px;" >
-                                                                Verify Email
+                                                                {{__('auth.verify.Verify Email')}}
                                                             </button>
                                                         </form>
                                                     </td></tr></tbody></table></td></tr></tbody></table></div><!--[if mso | IE]>

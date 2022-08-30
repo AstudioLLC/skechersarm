@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-5 shadow-sm  reg-window bg-white p-3">
-                <p class="h3 mb-4 text-primary fs-4">Գաղտնաբառի վերականգնում</p>
+                <p class="h3 mb-4 text-primary fs-4">{{__('auth.email.Password recovery')}}</p>
                 @if (session('status'))
                     <div class="alert alert-success" role="alert">
                         {{ session('status') }}
@@ -22,7 +22,7 @@
                     <input type="hidden" name="token" value="{{ $token }}">
                     <div class="mb-5">
                         <input type="text" class="form-control rounded-0 border-0 border-bottom @error('email') is-invalid @enderror"
-                               name="email" value="{{ $email ?? old('email') }}" required autocomplete="email"  placeholder="Էլ․ հասցե *" style="font-size: 14px;">
+                               name="email" value="{{ $email ?? old('email') }}" required autocomplete="email"  placeholder="{{__('auth.email.Email')}}" style="font-size: 14px;">
 
                         @error('email')
                         <span class="invalid-feedback" role="alert">
@@ -31,7 +31,7 @@
                         @enderror
                     </div>
                     <div class="mb-5">
-                        <input id="password" type="password" class="form-control rounded-0 border-0 border-bottom @error('password') is-invalid @enderror" name="password" placeholder="New Password" required autocomplete="new-password">
+                        <input id="password" type="password" class="form-control rounded-0 border-0 border-bottom @error('password') is-invalid @enderror" name="password" placeholder="{{__('auth.email.New Password')}}" required autocomplete="new-password">
 
                         @error('password')
                         <span class="invalid-feedback" role="alert">
@@ -40,11 +40,11 @@
                         @enderror
                     </div>
                     <div class="mb-5">
-                            <input id="password-confirm" type="password" class="form-control rounded-0 border-0 border-bottom" name="password_confirmation" placeholder="{{ __('Confirm Password') }}" required autocomplete="new-password">
+                            <input id="password-confirm" type="password" class="form-control rounded-0 border-0 border-bottom" name="password_confirmation" placeholder="{{__('auth.email.Confirm Password')}}" required autocomplete="new-password">
                     </div>
 
                     <div class="d-grid gap-2 mt-4">
-                        <button class="btn btn-primary rounded-0 w-100 py-2" type="submit">Հաստատել</button>
+                        <button class="btn btn-primary rounded-0 w-100 py-2" type="submit">{{__('auth.email.Confirm')}}</button>
                     </div>
                 </form>
             </div>
