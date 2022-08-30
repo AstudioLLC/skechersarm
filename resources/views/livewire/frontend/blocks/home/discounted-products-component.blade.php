@@ -1,6 +1,6 @@
 @if(count($items))
 <div class="main-title justify-content-start justify-content-lg-center my-3">
-    <h2>Զեղչեր</h2>
+    <h2>{{__('frontend.discount.Discount')}}</h2>
 </div>
 @endif
 <div class="desctop-products d-none d-lg-block">

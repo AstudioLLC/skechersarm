@@ -4,7 +4,7 @@
     <div class="container pt-4">
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item fs-7"><a href="/" class="text-reset text-decoration-none">Գլխավոր</a></li>
+                <li class="breadcrumb-item fs-7"><a href="/" class="text-reset text-decoration-none">{{__('frontend.cart.Home')}}</a></li>
                 <li class="breadcrumb-item fs-7 active" aria-current="page">{{$page->title ?? null}}</li>
             </ol>
         </nav>
@@ -21,7 +21,7 @@
         @endif
         <div class="row">
             <div class="col-12 col-xl-3">
-                <h5 class="text-primary ms-3">Կապվեք մեզ հետ</h5>
+                <h5 class="text-primary ms-3">{{__('frontend.contact.Contact us')}}</h5>
                 <div class="row m-0">
                     <div class="col-12 col-md-6 col-xl-12 mb-3">
                         <div class="shadow-sm d-flex align-items-center p-2 gap-4">
@@ -58,35 +58,35 @@
                     <div class="row m-0">
                         <div class="col-12 col-md-6 col-xl-4">
                             <div class="mb-3">
-                                <label for="contactName" class="form-label text-muted">Անուն *</label>
+                                <label for="contactName" class="form-label text-muted">{{__('frontend.header.Name')}}</label>
                                 <input type="text"  wire:model.defer="name" class="form-control form-control-lg rounded-0 border bg-light" id="contactName">
                                 @error('name') <span class="text-danger">{{$message}}</span>@enderror
                             </div>
                         </div>
                         <div class="col-12 col-md-6 col-xl-4">
                             <div class="mb-3">
-                                <label for="contactEmail" class="form-label text-muted">Էլ. Փոստ *</label>
+                                <label for="contactEmail" class="form-label text-muted">{{__('frontend.header.Email')}}</label>
                                 <input type="email"  wire:model.defer="email" class="form-control form-control-lg rounded-0 border bg-light" id="contactEmail">
                                 @error('email') <span class="text-danger">{{$message}}</span>@enderror
                             </div>
                         </div>
                         <div class="col-12 col-md-6 col-xl-4">
                             <div class="mb-3">
-                                <label for="contactPhone" class="form-label text-muted">Հեռ.` *</label>
+                                <label for="contactPhone" class="form-label text-muted">{{__('frontend.header.Contact')}}</label>
                                 <input type="number"  wire:model.defer="phone" class="form-control form-control-lg rounded-0 border bg-light" id="contactPhone">
                                 @error('phone') <span class="text-danger">{{$message}}</span>@enderror
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="mb-3">
-                                <label for="contactMessage" class="form-label text-muted">Հաղորդագրություն *</label>
+                                <label for="contactMessage" class="form-label text-muted">{{__('frontend.contact.Message')}}</label>
                                 <textarea class="form-control form-control-lg rounded-0 border bg-light"  wire:model.defer="message" rows="5" id="contactMessage"></textarea>
                                 @error('message') <span class="text-danger">{{$message}}</span>@enderror
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="d-flex justify-content-end">
-                                <button type="submit" class="btn btn-outline-primary rounded-0 py-2 px-5">Ուղարկել</button>
+                                <button type="submit" class="btn btn-outline-primary rounded-0 py-2 px-5">{{__('frontend.contact.Send')}}</button>
                             </div>
                         </div>
                     </div>

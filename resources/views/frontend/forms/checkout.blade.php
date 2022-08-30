@@ -2,13 +2,13 @@
         <div class="form-check shadow-sm p-2 ps-5 pe-4">
             <input class="form-check-input" type="radio" value="0" name="ship_method" id="takeAway">
             <label class="form-check-label" for="takeAway">
-                Վերցնել խանութից
+                {{__('frontend.cart.Pick up in store')}}
             </label>
         </div>
         <div class="form-check shadow-sm p-2 ps-5 pe-4">
             <input class="form-check-input" type="radio"  value="1" name="ship_method" id="delivery">
             <label class="form-check-label" for="delivery">
-                Առաքում
+                {{__('frontend.cart.Shipment')}}
             </label>
         </div>
     </div>
@@ -44,7 +44,7 @@
         </div>
         <input type="hidden" name="subtotal" value="{{Cart::instance('cart')->subtotal}}">
         <div class="d-flex justify-content-end mt-1 flex-wrap gap-2">
-            <button class="btn btn-primary px-4 py-2 rounded-1" type="submit">Պատվիրել</button>
+            <button class="btn btn-primary px-4 py-2 rounded-1" type="submit">{{__('frontend.cart.Order')}}</button>
             {{--    <button class="btn btn-primary px-4 py-2 rounded-1" type="submit">Շարունակել պատվերը</button>--}}
         </div>
     </div>
@@ -55,9 +55,9 @@
         <div class="row mt-4">
             <div class="col-12 col-md-4">
                 <div class="form-group">
-                    <label for="">Քաղաք/բնակավայրը *</label>
+                    <label for="">{{__('frontend.cart.City')}}</label>
                     <select class="form-select bg-light border-0 p-2 mt-2 " id="selectCity" wire:model="city" name="city" aria-label="Default select example">
-                        <option value="">Choose City</option>
+                        <option value="">{{__('frontend.cart.Choose city')}}</option>
                         @foreach($delivery as $city)
                             <option  value="{{ $city->id }}">{{ $city->title }}</option>
                         @endforeach
@@ -66,9 +66,9 @@
             </div>
             <div class="col-12 col-md-4">
                 <div class="form-group">
-                    <label for="">Վարչական շրջանը *</label>
+                    <label for="">{{__('frontend.cart.Administrative region')}}</label>
                     <select class="form-select bg-light border-0 p-2 mt-2"  wire:model="regions" name="district" aria-label="Default select example">
-                        <option value="">Choose City</option>
+                        <option value="">{{__('frontend.cart.Choose region')}}</option>
                         @if (!is_null($region))
                             @foreach($region as $val)
                                 <option  value="{{$val->id}}" >{{ $val->title }}</option>
@@ -79,7 +79,7 @@
             </div>
             <div class="col-12 col-md-4">
                 <div class="form-group">
-                    <label for="checkoutAddress">Հասցե *</label>
+                    <label for="checkoutAddress">{{__('frontend.cart.Address')}}</label>
                     <input type="text" class="form-control bg-light border-0 p-2 mt-2" id="checkoutAddress" placeholder="Tumanyan 42/1">
                 </div>
             </div>
@@ -87,13 +87,13 @@
         <div class="row mt-4">
             <div class="col-12 col-md-6">
                 <div class="form-group" for="message">
-                    <label for="">Նշումները</label>
+                    <label for="">{{__('frontend.cart.Notes')}}</label>
                     <textarea id="message" name="notes" class="form-control bg-light mt-2 border-0" rows="10"></textarea>
                 </div>
             </div>
             <div class="col-12 col-md-6 d-flex">
                 <div class="form-group d-flex flex-column flex-fill">
-                    <label for="">Ծանուցում</label>
+                    <label for="">{{__('frontend.cart.Notification')}}</label>
                     <div class="border mt-2 flex-fill py-4 px-3">
                         <p class="">Առաքման կանոններ</p>
                         <p>-Երևան՝ 1-3 աշխատանքային օր</p>
@@ -103,18 +103,18 @@
                 </div>
             </div>
         </div>
-        <h6 class="text-end mt-4">Ընտրեք վճարման եղանակը</h6>
+        <h6 class="text-end mt-4">{{__('frontend.cart.Choose a payment method')}}</h6>
         <div class="d-flex gap-3 justify-content-end mt-3 flex-wrap pay-radio">
             <div class="form-check shadow-sm p-2 ps-5 pe-4">
                 <input class="form-check-input" type="radio" name="payment_type" value="0" id="payOffline">
                 <label class="form-check-label" for="payOffline">
-                    Վճարել խանութում
+                    {{__('frontend.cart.Pay in store')}}
                 </label>
             </div>
             <div class="form-check shadow-sm p-2 ps-5 pe-4">
                 <input class="form-check-input" type="radio" name="payment_type" value="1" id="payOnline">
                 <label class="form-check-label" for="payOnline">
-                    Վճարում օնլայն
+                    {{__('frontend.cart.Payment online')}}
                 </label>
             </div>
         </div>
@@ -198,12 +198,12 @@
         </div>
         @if($deliveryprice && ($region) && ($regions))
             <div class="d-flex justify-content-end mt-4 gap-5 me-2 fw-bold">
-                <p class="m-0">Առաքման գին՝</p>
+                <p class="m-0">{{__('frontend.cart.Shipping price')}}</p>
                 <p class="m-0">{{number_format($deliveryprice)}} <small>֏</small></p>
             </div>
         @endif
         <div class="d-flex justify-content-end mt-2 gap-5 me-2 fw-bold">
-            <p class="m-0">Ընդամենը՝</p>
+            <p class="m-0">{{__('frontend.cart.Total')}}</p>
 
             <p class="m-0">@if($region && $regions && $deliveryprice) {{number_format($deliveryprice+Cart::instance('cart')->subtotal)}} <small> ֏</small>@else  {{number_format(Cart::instance('cart')->subtotal)}} <small>֏</small> @endif</p>
             @if($deliveryprice && ($region) && ($regions))
@@ -214,7 +214,7 @@
 
 
         <div class="d-flex justify-content-end mt-1 flex-wrap gap-2">
-            <button class="btn btn-primary px-4 py-2 rounded-1" type="submit">Պատվիրել</button>
+            <button class="btn btn-primary px-4 py-2 rounded-1" type="submit">{{__('frontend.cart.Order')}}</button>
             {{--    <button class="btn btn-primary px-4 py-2 rounded-1" type="submit">Շարունակել պատվերը</button>--}}
         </div>
     </div>

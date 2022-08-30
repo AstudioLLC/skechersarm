@@ -4,15 +4,15 @@
     <div class="container py-4">
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item fs-7"><a href="/" class="text-reset text-decoration-none">Գլխավոր</a></li>
-                <li class="breadcrumb-item fs-7 active" aria-current="page">Նախընտրած ապրանքներ</li>
+                <li class="breadcrumb-item fs-7"><a href="/" class="text-reset text-decoration-none">{{__('frontend.cart.Home')}}</a></li>
+                <li class="breadcrumb-item fs-7 active" aria-current="page">{{__('frontend.wishlist.Preferred products')}}</li>
             </ol>
         </nav>
     </div>
     <!-- End Breadcrumb -->
     <div class="container">
         <div class="main-title justify-content-start my-1">
-            <h1 class="fs-4">Նախընտրած ապրանքներ</h1>
+            <h1 class="fs-4">{{__('frontend.wishlist.Preferred products')}}</h1>
         </div>
         <div class="desctop-products d-none d-lg-block" >
             <div class="row m-0 gap-0">
@@ -85,7 +85,7 @@
                 @endforeach
 
                 @if(!count(Cart::instance('wishlist')->content()))
-                    <p>Նախընտրած ապրանքներ չկան</p>
+                    <p>{{__('frontend.wishlist.There are no preferred products')}}</p>
                     @endif
             </div>
         </div>

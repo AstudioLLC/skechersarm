@@ -1,7 +1,7 @@
 <div>
     <div class="container py-5">
         <div class="title d-flex flex-column w-50 mx-auto mb-4">
-            <h2 class="text-center fw-normal">Բրենդներ</h2>
+            <h2 class="text-center fw-normal">{{__('frontend.brand.Brands')}}</h2>
             <div class="w-25 mx-auto border-bottom border-dark mt-3"></div>
         </div>
         <div class="sipwer-buttons d-flex d-xl-none justify-content-center mb-4">

@@ -3,8 +3,8 @@
     <div class="container py-4">
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item fs-7"><a href="/" class="text-reset text-decoration-none">Գլխավոր</a></li>
-                <li class="breadcrumb-item fs-7 active" aria-current="page">Անձնական տվյալներ</li>
+                <li class="breadcrumb-item fs-7"><a href="/" class="text-reset text-decoration-none">{{__('frontend.cart.Home')}}</a></li>
+                <li class="breadcrumb-item fs-7 active" aria-current="page">{{__('frontend.cabinet.Personal information')}}</li>
             </ol>
         </nav>
     </div>
@@ -15,7 +15,7 @@
                 <span class="fs-4">
                     <i class="fa-light fa-user"></i>
                 </span>
-                <h1 class="fs-4 ps-0 mt-2">Անձնական տվյալներ</h1>
+                <h1 class="fs-4 ps-0 mt-2">{{__('frontend.cabinet.Personal information')}}</h1>
             </div>
         </a>
         <div class="row m-0">
@@ -27,7 +27,7 @@
                 <div class="row m-0">
                     <div class="col-12 col-md-6 col-xl-4 px-0 px-md-2">
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Password *</label>
+                            <label for="exampleFormControlInput1" class="form-label">{{__('frontend.password.old password')}}</label>
                             <input type="password" wire:model="current_password" class="form-control bg-light border-0 p-3" id="exampleFormControlInput1" placeholder="Current Password">
                         </div>
                         @if ($errors->has('current_password'))
@@ -36,7 +36,7 @@
                     </div>
                     <div class="col-12 col-md-6 col-xl-4 px-0 px-md-2">
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Password *</label>
+                            <label for="exampleFormControlInput1" class="form-label">{{__('frontend.password.new password')}}</label>
                             <input type="password" wire:model="password" class="form-control bg-light border-0 p-3" id="exampleFormControlInput1" placeholder="New Password">
                         </div>
                         @if ($errors->has('password'))
@@ -45,7 +45,7 @@
                     </div>
                     <div class="col-12 col-md-6 col-xl-4 px-0 px-md-2">
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Password *</label>
+                            <label for="exampleFormControlInput1" class="form-label">{{__('frontend.password.confirm new password')}}</label>
                             <input type="password" wire:model="password_confirmation" class="form-control bg-light border-0 p-3" id="exampleFormControlInput1" placeholder="Confirm New Password">
                         </div>
                         @if ($errors->has('password_confirmation'))
@@ -54,7 +54,7 @@
                     </div>
                 </div>
                     <div class="d-flex justify-content-end">
-                        <button class="btn btn-primary px-5 py-2 rounded-1" >Պահպանել</button>
+                        <button class="btn btn-primary px-5 py-2 rounded-1" >{{__('frontend.password.Save changes')}}</button>
                     </div>
                 </form>
 

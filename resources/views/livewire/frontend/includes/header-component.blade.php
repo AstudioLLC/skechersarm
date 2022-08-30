@@ -19,7 +19,7 @@
                                         </span>
                                     </div>
                                     <div class="header-phone-info d-none d-lg-block">
-                                        <p class="mb-0 fs-7">Զանգերի կենտրոն</p>
+                                        <p class="mb-0 fs-7">{{__('frontend.header.Call center')}}</p>
                                         <p class="mb-0 fs-6 fw-bold text-primary">{{$information->phone}}</p>
                                     </div>
                                 </div>
@@ -88,10 +88,10 @@
                                     @if(Auth::check())
                                     <span class="ms-1 d-lg-inline-block">
                                         {{(\Illuminate\Support\Facades\Auth::user()->name)?
-                                            Illuminate\Support\Facades\Auth::user()->name :'Իմ հաշիվը'}}
+                                            Illuminate\Support\Facades\Auth::user()->name : __('frontend.header.My account')}}
                                         </span>
                                         @else
-                                        <span class="ms-1 d-none d-lg-inline-block">Մուտք</span>
+                                        <span class="ms-1 d-none d-lg-inline-block">{{__('frontend.header.Login')}}</span>
                                         @endif
                                     </div>
                                 </a>
@@ -102,7 +102,7 @@
                                         <span class="fs-6">
                                             <i class="fa-light fa-cart-shopping"></i>
                                         </span>
-                                        <span class="ms-1 d-none d-lg-inline-block">Զամբյուղ</span>
+                                        <span class="ms-1 d-none d-lg-inline-block">{{__('frontend.header.Basket')}}</span>
                                     </div>
                                 </a>
                             </li>
@@ -112,7 +112,7 @@
                                         <span class="fs-6">
                                             <i class="fa-light fa-heart"></i>
                                         </span>
-                                        <span class="ms-1 d-none d-lg-inline-block">Հավանածներ</span>
+                                        <span class="ms-1 d-none d-lg-inline-block">{{__('frontend.header.Favorite')}}</span>
                                     </div>
                                 </a>
                             </li>

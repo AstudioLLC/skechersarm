@@ -3,8 +3,8 @@
     <div class="container pt-4">
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item fs-7"><a href="/" class="text-reset text-decoration-none">Գլխավոր</a></li>
-                <li class="breadcrumb-item fs-7"><a href="#" class="text-reset text-decoration-none">Բլոգ</a></li>
+                <li class="breadcrumb-item fs-7"><a href="/" class="text-reset text-decoration-none">{{__('frontend.cart.Home')}}</a></li>
+                <li class="breadcrumb-item fs-7"><a href="#" class="text-reset text-decoration-none">{{__('frontend.blog.Blog')}}</a></li>
                 <li class="breadcrumb-item fs-7 active" aria-current="page">{{$item->title}}</li>
             </ol>
         </nav>
@@ -29,7 +29,7 @@
         </div>
         <div class="main-title justify-content-start my-3">
             @if(count($item->gallery))
-            <h2 class="fs-4">Պատկերասրահ</h2>
+            <h2 class="fs-4">{{__('frontend.gallery.Gallery')}}</h2>
             @endif
         </div>
         @if($item->gallery)

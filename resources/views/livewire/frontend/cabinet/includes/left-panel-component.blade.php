@@ -11,7 +11,7 @@
                         <img src="{{asset('frontend/images/icons/cabinet/user.svg')}}" class="img-fluid" alt="">
                     </div>
                     <div class="col-8 p-0">
-                        <p class="m-0">Անձնական տվյալներ</p>
+                        <p class="m-0">{{__('frontend.cabinet.Personal information')}}</p>
                     </div>
                     <div class="col-2 p-0"></div>
                 </div>
@@ -22,7 +22,7 @@
                         <img src="{{asset('frontend/images/icons/cabinet/heart.svg')}}" class="img-fluid" alt="">
                     </div>
                     <div class="col-8 p-0">
-                        <p class="m-0">Նախընտրածներ</p>
+                        <p class="m-0">{{__('frontend.cabinet.Favorites')}}</p>
                     </div>
                     <div class="col-2 p-0">({{Cart::instance('wishlist')->count()}})</div>
                 </div>
@@ -33,7 +33,7 @@
                         <img src="{{asset('frontend/images/icons/cabinet/basket.svg')}}" class="img-fluid" alt="">
                     </div>
                     <div class="col-8 p-0">
-                        <p class="m-0">Զամբյուղ</p>
+                        <p class="m-0">{{__('frontend.cabinet.Basket')}}</p>
                     </div>
                     <div class="col-2 p-0">({{Cart::instance('cart')->count()}})</div>
                 </div>
@@ -44,7 +44,7 @@
                         <img src="{{asset('frontend/images/icons/cabinet/box.svg')}}" class="img-fluid" alt="">
                     </div>
                     <div class="col-8 p-0">
-                        <p class="m-0">Ընթացիկ  գնումներ</p>
+                        <p class="m-0">{{__('frontend.cabinet.Current purchases')}}</p>
                     </div>
                     <div class="col-2 p-0">({{$count_ongoing_purchases}})</div>
                 </div>
@@ -55,7 +55,7 @@
                         <img src="{{asset('frontend/images/icons/cabinet/money.svg')}}" class="img-fluid" alt="">
                     </div>
                     <div class="col-8 p-0">
-                        <p class="m-0">Գնումների արխիվ</p>
+                        <p class="m-0">{{__('frontend.cabinet.Shopping archive')}}</p>
                     </div>
                     <div class="col-2 p-0">({{$count_order_archive}})</div>
                 </div>
@@ -66,7 +66,7 @@
                         <img src="{{asset('frontend/images/icons/cabinet/money.svg')}}" class="img-fluid" alt="">
                     </div>
                     <div class="col-8 p-0">
-                        <p class="m-0">Բոնուս քարտ</p>
+                        <p class="m-0">{{__('frontend.cabinet.Bonus card')}}</p>
                     </div>
 
                 </div>
@@ -77,7 +77,7 @@
                         <img src="{{asset('frontend/images/icons/cabinet/settings.svg')}}" class="img-fluid" alt="">
                     </div>
                     <div class="col-8 p-0">
-                        <p class="m-0">Կարգավորումներ</p>
+                        <p class="m-0">{{__('frontend.cabinet.Settings')}}</p>
                     </div>
                     <div class="col-2 p-0"></div>
                 </div>
@@ -90,7 +90,7 @@
                         <img src="{{asset('frontend/images/icons/cabinet/exit.svg')}}" class="img-fluid" alt="">
                     </div>
                     <div class="col-8 p-0">
-                        <p class="m-0">Ելք համակարգից</p>
+                        <p class="m-0">{{__('frontend.cabinet.Log out')}}</p>
                     </div>
                     <div class="col-2 p-0"></div>
                 </div>

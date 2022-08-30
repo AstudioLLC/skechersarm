@@ -1,6 +1,6 @@
 <div class="main-title justify-content-start justify-content-lg-center my-3">
     @if(count($items))
-    <h2>Նորույթներ</h2>
+    <h2>{{__('frontend.new.News')}}</h2>
     @endif
 </div>
 
@@ -167,18 +167,3 @@
         <div class="swiper-pagination"></div>
     </div>
 </div>
-
-{{--<div class="baners mt-4">--}}
-    {{--    <div class="row">--}}
-        {{--        <div class="col-12 col-lg-6 mb-2">--}}
-            {{--            <a href="#">--}}
-                {{--                <img src="{{ asset('frontend/images/banner/ee83b579-4421-4638-b2c0-dd49792133fd.__CR0,0,970,300_PT0_SX970_V1___.jpg') }}" class="w-100" alt="">--}}
-            {{--            </a>--}}
-        {{--        </div>--}}
-        {{--        <div class="col-12 col-lg-6 mb-2">--}}
-            {{--            <a href="#">--}}
-                {{--                <img src="{{ asset('frontend/images/banner/sports-women.jpg') }}" class="w-100" alt="">--}}
-            {{--            </a>--}}
-        {{--        </div>--}}
-    {{--    </div>--}}
-{{--</div>--}}

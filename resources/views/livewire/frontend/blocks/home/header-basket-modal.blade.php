@@ -2,7 +2,7 @@
     <div class="cart-modal modal-dialog modal-dialog-scrollable modal-fullscreen-md-down me-auto me-md-5 w-100">
         <div class="modal-content rounded-0">
             <div class="modal-header" style="border-bottom-style: dashed;">
-                <p class="modal-title fs-7" id="staticBackdropLabel">Ձեր զամբյուղը</p>
+                <p class="modal-title fs-7" id="staticBackdropLabel">{{__('frontend.header.Your shopping cart')}}</p>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             @if(Cart::instance('cart')->count() > 0)
@@ -26,15 +26,15 @@
                         </div>
                         <div class="col-6">
                             <div class="d-flex fs-7 justify-content-between">
-                                <span class="fw-normal">Կոդ։</span>
+                                <span class="fw-normal">{{__('frontend.header.Code')}}</span>
                                 <span class="text-muted">#{{$item->model->article_1c}}</span>
                             </div>
                             <div class="d-flex fs-7 justify-content-between">
-                                <span class="fw-normal">Գույն։</span>
+                                <span class="fw-normal">{{__('frontend.header.Color')}}</span>
                                 <span class="text-muted">Մոխրագույն</span>
                             </div>
                             <div class="d-flex fs-7 justify-content-between">
-                                <span class="fw-normal">Չափ։</span>
+                                <span class="fw-normal">{{__('frontend.header.Size')}}</span>
                                 <span class="text-muted">37</span>
                             </div>
                             @if($item->model->sale_price)
@@ -66,14 +66,14 @@
             </div>
             <div class="modal-footer bg-light flex-column">
                 <div class="d-flex justify-content-between w-100 fs-6">
-                    <p class="m-0 fw-bold">Ընդամենը ՝</p>
+                    <p class="m-0 fw-bold">{{__('frontend.header.Total')}}</p>
                     <p class="m-0 fw-bold">{{Cart::instance('cart')->subtotal()}}</p>
                 </div>
-                <a href="#" class="btn text-decoration-underline fs-6" data-bs-toggle="modal" data-bs-target="#fastOrder">Արագ պատվեր</a>
-                <a href="{{Auth::check() ? route('cabinet.cart') : route('login')}}" class="btn btn-primary w-100 rounded-1 fs-6">Պատվիրել</a>
+                <a href="#" class="btn text-decoration-underline fs-6" data-bs-toggle="modal" data-bs-target="#fastOrder">{{__('frontend.header.Fast order')}}</a>
+                <a href="{{Auth::check() ? route('cabinet.cart') : route('login')}}" class="btn btn-primary w-100 rounded-1 fs-6">{{__('frontend.header.Order')}}</a>
             </div>
             @else
-            <p class="text-center fs-7 mt-4 mb-2">Զամբյուղը դատարկ է</p>
+            <p class="text-center fs-7 mt-4 mb-2">{{__('frontend.header.Cart is empty')}}</p>
             @endif
         </div>
     </div>

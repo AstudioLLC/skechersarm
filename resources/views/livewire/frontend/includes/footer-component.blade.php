@@ -106,7 +106,7 @@
                 </p>
             </div>
             <div class="col-lg col-sm-6 col-12 fs-6 mb-3">
-                <h5 class="fw-bold fs-6">Գլխավոր</h5>
+                <h5 class="fw-bold fs-6">{{__('frontend.footer.Home')}}</h5>
                 <ul class="nav flex-column">
                     @if($headerPages)
                         @foreach($headerPages as $headerPage)
@@ -118,7 +118,7 @@
                 </ul>
             </div>
             <div class="col-lg col-sm-6 col-12 fs-6 mb-3">
-                <h5 class="fw-bold fs-6">Ինֆորմացիոն</h5>
+                <h5 class="fw-bold fs-6">{{__('frontend.footer.Information')}}</h5>
                 <ul class="nav flex-column">
                     @foreach($pagesForInformation as $pageForInformation)
                         <li class="nav-item">
@@ -128,7 +128,7 @@
                 </ul>
             </div>
             <div class="col-lg col-sm-6 col-12 fs-6 mb-3">
-                <h5 class="fw-bold fs-6">Կատալոգ</h5>
+                <h5 class="fw-bold fs-6">{{__('frontend.footer.Catalog')}}</h5>
                 <ul class="nav flex-column">
                     {{--                    @foreach($pagesForBuyers as $pageForBuyers)--}}
                     {{--                    <li class="nav-item">--}}
@@ -143,7 +143,7 @@
                 </ul>
             </div>
             <div class="col-lg col-sm-6 col-12 fs-6">
-                <h5 class="fw-bold fs-6">Տեսականի</h5>
+                <h5 class="fw-bold fs-6">{{__('frontend.footer.Assortment')}}</h5>
                 <ul class="nav flex-column">
 
                     @foreach($frontCategoriesFooter as $parentCategory)

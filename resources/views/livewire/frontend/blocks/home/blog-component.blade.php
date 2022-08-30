@@ -1,6 +1,6 @@
 <div class="main-title justify-content-start justify-content-lg-center my-3">
     @if(count($items))
-    <h2>Բլոգ</h2>
+    <h2>{{__('frontend.blog.Blog')}}</h2>
     @endif
 </div>
 <div class="row ">

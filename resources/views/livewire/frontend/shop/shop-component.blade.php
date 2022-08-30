@@ -3,8 +3,8 @@
     <div class="container py-4">
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item fs-7"><a href="#" class="text-reset text-decoration-none">Գլխավոր</a></li>
-                <li class="breadcrumb-item fs-7"><a href="#" class="text-reset text-decoration-none">Կատալոգ</a></li>
+                <li class="breadcrumb-item fs-7"><a href="#" class="text-reset text-decoration-none">{{__('frontend.cart.Home')}}</a></li>
+                <li class="breadcrumb-item fs-7"><a href="#" class="text-reset text-decoration-none">{{__('frontend.footer.Catalog')}}</a></li>
                 @foreach($selCategories as $selCategory)
                     @if(!$loop->last)
                         <li class="breadcrumb-item fs-7">
@@ -73,7 +73,7 @@
                     <div class="col-6 d-flex justify-content-end align-items-center">
                         <div class="dropdown">
                             <button class="btn dropdown-toggle fs-6" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                Դասակարգել
+                                {{__('frontend.shop.Classify')}}
                             </button>
                             <ul class="dropdown-menu fs-6" aria-labelledby="dropdownMenuButton1">
                                 <li><a class="dropdown-item" href="#">A-Z</a></li>

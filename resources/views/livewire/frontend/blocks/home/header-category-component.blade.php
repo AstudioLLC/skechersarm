@@ -1,7 +1,7 @@
 <div class="col d-none d-xl-block category">
     <ul class="nav text-white">
         <li class="nav-item">
-            <a class="nav-link  ps-0 pe-2 fs-7 text-reset py-3" style="cursor: pointer">Կատալոգ</a>
+            <a class="nav-link  ps-0 pe-2 fs-7 text-reset py-3" style="cursor: pointer">{{__('frontend.footer.Catalog')}}</a>
             <div class="mega-menu">
                 <div class="container position-relative bg-light pt-4">
                     <ul class="nav flex-column">
@@ -32,12 +32,12 @@
                                             </li>
                                             @endforeach
                                         </ul>
-                                        <a href="#" class="text-decoration-underline text-primary fs-7 ps-3">Բոլորը</a>
+                                        <a href="#" class="text-decoration-underline text-primary fs-7 ps-3">{{__('frontend.header.All')}}</a>
                                     </div>
                                     @endforeach
                                         <div class="col-3">
                                             @if(count($collections))
-                                            <p class="fw-bold fs-7 text-dark ps-3 mb-2">Հավաքածուներ</p>
+                                            <p class="fw-bold fs-7 text-dark ps-3 mb-2">{{__('frontend.header.Collections')}}</p>
                                             @endif
                                             <ul class="nav flex-column">
                                                 @foreach($collections as $collection)
@@ -47,7 +47,7 @@
                                                 </li>
                                                 @endforeach
                                             </ul>
-                                            <a href="#" class="text-decoration-underline text-primary fs-7 ps-3">Բոլորը</a>
+                                            <a href="#" class="text-decoration-underline text-primary fs-7 ps-3">{{__('frontend.header.All')}}</a>
                                         </div>
                                     <div class="col-3">
                                         <div class="banner mb-3">

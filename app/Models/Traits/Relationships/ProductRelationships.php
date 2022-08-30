@@ -39,7 +39,7 @@ trait ProductRelationships
 
     public static function newProducts()
     {
-        return self::class::orderBy('created_at')->whereActive(true)->with('categories.parentCategory.parentCategory')->limit(5)->get();
+        return self::class::orderBy('created_at')->whereActive(true)->with('categories.parentCategory.parentCategory')->limit(6)->get();
     }
 
     public static function topSellerHomeProducts()

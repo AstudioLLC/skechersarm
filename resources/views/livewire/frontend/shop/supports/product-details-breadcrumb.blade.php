@@ -2,7 +2,7 @@
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb">
 
-                <li class="breadcrumb-item fs-7"><a href="#" class="text-reset text-decoration-none">Գլխավոր</a></li>
+                <li class="breadcrumb-item fs-7"><a href="#" class="text-reset text-decoration-none">{{__('frontend.cart.Home')}}</a></li>
                 @foreach($item->categories as $category)
 {{--                <li class="breadcrumb-item fs-7"><a href="#" class="text-reset text-decoration-none">{{$category->parentCategory->parentCategory->parentCategory->name ?? null}}</a></li>--}}
 

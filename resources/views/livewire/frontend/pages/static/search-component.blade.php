@@ -5,15 +5,15 @@
     <div class="container pt-4">
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item fs-7"><a href="/" class="text-reset text-decoration-none">Գլխավոր</a></li>
-                <li class="breadcrumb-item fs-7 active" aria-current="page">Որոնման արդյունքներ</li>
+                <li class="breadcrumb-item fs-7"><a href="/" class="text-reset text-decoration-none">{{__('frontend.cart.Home')}}</a></li>
+                <li class="breadcrumb-item fs-7 active" aria-current="page">{{__('frontend.search.Search results')}}</li>
             </ol>
         </nav>
     </div>
     <!-- End Breadcrumb -->
     <div class="container">
         <div class="main-title justify-content-start my-1">
-            <h1 class="fs-4">Որոնման արդյունքներ</h1>
+            <h1 class="fs-4">{{__('frontend.search.Search results')}}</h1>
         </div>
         <div class="desctop-products d-none d-lg-block" wire:ignore>
             <div class="row m-0 gap-0">

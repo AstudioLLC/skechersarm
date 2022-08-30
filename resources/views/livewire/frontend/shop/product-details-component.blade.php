@@ -53,13 +53,13 @@
                 {{--                <span class="text-primary fs-7 d-block mb-2">{{$product->name ?? ''}}</span>--}}
                 <span class="text-primary fs-7 d-block mb-2">@foreach($item->categories as $category) {{$category->name?? null}} @endforeach</span>
                 <h1 class="fs-4">{{$product->name ?? ''}}</h1>
-                <span class="d-block fs-7">Կոդ #{{$product->article_1c}}</span>
+                <span class="d-block fs-7">{{__('frontend.product.Code')}} #{{$product->article_1c}}</span>
                 <div class="product-price">
                     <span class="d-inline-block me-2 text-muted fs-4 text-decoration-line-through product_single_price">{{($product->sale_price)?number_format($product->price). ' ֏' :null}}</span>
                     <span class="d-inline-block fs-2 product_single_price">{{($product->sale_price != null) ? number_format($product->sale_price) :number_format($product->price)}} ֏</span>
                 </div>
                 @if(count($colors))
-                    <span class="d-block fs-7">Գույներ</span>
+                    <span class="d-block fs-7">{{__('frontend.product.Colors')}}</span>
                     <div class="product-ratio mt-2">
                         {{--                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked="">--}}
                         @foreach($colors as $color)
@@ -72,10 +72,10 @@
                     </div>
                 @endif
                 @if($sizeable)
-                    <span class="d-block fs-7 my-2">Չափսեր</span>
+                    <span class="d-block fs-7 my-2">{{__('frontend.product.Dimensions')}}</span>
                     <div class="product-ratio">
                         @foreach($sizes as $key => $size)
-                            <input type="radio" class="btn-check" value="{{$size->id}}" @if(!in_array($size->id,$availableSizes)) disabled title="Առկա չէ" @endif wire:click="$set('clickedSize', {{$size->id}})" wire:model="size" id="btnradios{{$key}}" autocomplete="off" checked>
+                            <input type="radio" class="btn-check" value="{{$size->id}}" @if(!in_array($size->id,$availableSizes)) disabled title="{{__('frontend.product.Not available')}}" @endif wire:click="$set('clickedSize', {{$size->id}})" wire:model="size" id="btnradios{{$key}}" autocomplete="off" checked>
                             <label class="btn radio-btn-outline fs-7 mb-1 py-1 px-4 rounded-1" for="btnradios{{$key}}">{{$size->title}}</label>
                         @endforeach
                     </div>
@@ -83,7 +83,7 @@
                 @endif
                 @if(count($availableSizes) || !$sizeable)
                     <div class="d-flex align-items-center mt-3" style="max-width: 200px;">
-                        <span class="d-block fs-7 me-2 text-muted">Քանակ</span>
+                        <span class="d-block fs-7 me-2 text-muted">{{__('frontend.product.Quantity')}}</span>
                         <div class="input-group mb-1">
                             <button class="btn border border-end-0 fs-6 py-1" wire:click.prevent="decreaseQuantity" onclick="miban()">-</button>
                             <input type="number"  wire:model="qty" class="form-control border fs-7 py-1 text-center" value="1" max="{{$product->quantity}}" data-product-id="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
@@ -91,11 +91,11 @@
                         </div>
                     </div>
                 @else
-                    <span class="font-weight-bold text-danger">Առկա չէ</span>
+                    <span class="font-weight-bold text-danger">{{__('frontend.product.Not available')}}</span>
                 @endif
                 <div class="d-flex align-items-center mt-3" style="max-width: 320px;">
                     @if(count($availableSizes) || !$sizeable)
-                        <a  class="btn btn-primary flex-fill me-2 fs-7 rounded-1 py-2"  wire:click.prevent="store({{$product->id}},'{{$product->name}}',{{$product->sale_price ?? $product->price}})">Ավելացնել զամբյուղ</a>
+                        <a  class="btn btn-primary flex-fill me-2 fs-7 rounded-1 py-2"  wire:click.prevent="store({{$product->id}},'{{$product->name}}',{{$product->sale_price ?? $product->price}})">{{__('frontend.product.Add to cart')}}</a>
                     @endif
                     @php($favorites = Cart::instance('wishlist')->content()->pluck('id'))
                     @if($favorites->contains($product->id))
@@ -125,7 +125,7 @@
             <div class="col-12 col-lg-7 my-5 my-lg-0">
                 <div class="border-bottom mb-3">
                     @if($product->description)
-                        <h2 class="h4">Նկարագրություն</h2>
+                        <h2 class="h4">{{__('frontend.product.Description')}}</h2>
                     @endif
                 </div>
                 <div class="pe-3">
@@ -143,10 +143,9 @@
         @if(count($similar_products))
             <div class="main-title justify-content-start my-3">
                 @if(count($similar_products))
-                    <h2 class="fs-4">Նմանատիպ ապրանքներ</h2>
+                    <h2 class="fs-4">{{__('frontend.product.Similar products')}}</h2>
                 @endif
             </div>
-
             <div class="mobile-products" wire:ignore>
                 <div class="d-flex gap-2 mb-3" >
                     <div class="swiper-offer-left">
@@ -241,7 +240,7 @@
         @if($session_products)
             <div class="main-title justify-content-start my-3">
                 @if(count($session_products))
-                    <h2 class="fs-4">Վերջին դիտվածները</h2>
+                    <h2 class="fs-4">{{__('frontend.product.Recently viewed')}}</h2>
                 @endif
             </div>
             <div class="mobile-products" wire:ignore>

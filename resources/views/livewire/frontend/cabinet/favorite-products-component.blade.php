@@ -3,8 +3,8 @@
         <div class="container py-4">
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item fs-7"><a href="/" class="text-reset text-decoration-none">Գլխավոր</a></li>
-                    <li class="breadcrumb-item fs-7 active" aria-current="page">Անձնական տվյալներ</li>
+                    <li class="breadcrumb-item fs-7"><a href="/" class="text-reset text-decoration-none">{{__('frontend.cart.Home')}}</a></li>
+                    <li class="breadcrumb-item fs-7 active" aria-current="page">{{__('frontend.cabinet.Personal information')}}</li>
                 </ol>
             </nav>
         </div>
@@ -14,7 +14,7 @@
                 <span class="fs-4">
                     <i class="fa-light fa-user"></i>
                 </span>
-                <h1 class="fs-4 ps-0 mt-2">Անձնական տվյալներ</h1>
+                <h1 class="fs-4 ps-0 mt-2">{{__('frontend.cabinet.Personal information')}}</h1>
             </div>
         </a>
         <div class="row m-0">

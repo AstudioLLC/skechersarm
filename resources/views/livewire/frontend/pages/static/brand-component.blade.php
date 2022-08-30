@@ -3,8 +3,8 @@
     <div class="container py-4">
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item fs-7"><a href="/" class="text-reset text-decoration-none">Գլխավոր</a></li>
-                <li class="breadcrumb-item fs-7 active" aria-current="page">Հավաքածուներ</li>
+                <li class="breadcrumb-item fs-7"><a href="/" class="text-reset text-decoration-none">{{__('frontend.cart.Home')}}</a></li>
+                <li class="breadcrumb-item fs-7 active" aria-current="page">{{__('frontend.header.Collections')}}</li>
                 <li class="breadcrumb-item fs-7 active" aria-current="page">{{$brand->title}}</li>
             </ol>
         </nav>
