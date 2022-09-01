@@ -25,14 +25,15 @@
             @if(auth()->user() && $showAddCard==0)
             <div class="col-12 col-xl-8 cabinet-info">
                 <h1 class="fs-5">{{__('frontend.bonus.Attach a bonus card')}}</h1>
-                <form action="{{ route('bonus.addCard') }}" method="post">
+{{--                <form action="{{ route('bonus.addCard') }}" method="post">--}}
+                <form wire:submit.prevent="save" >
                     @csrf
-                    <div class="shadow-sm p-3">
+                    <div class="shadow-sm p-3" wire:ignore.self>
                         <div class="row m-0">
                             <div class="col-12 col-md-6 col-xl-4 px-0 px-md-2">
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-labe fs-7 text-muted">{{__('frontend.bonus.Name')}}</label>
-                                    <input type="text" name="name" class="form-control rounded-0 border-0 border-bottom" id="exampleFormControlInput1">
+                                    <input type="text" name="name"  wire:model="name" class="form-control rounded-0 border-0 border-bottom" id="exampleFormControlInput1">
                                     @if($errors->has('name'))
                                         <span style="color: red">{{ $errors->first('name') }}</span>
                                     @endif
@@ -41,7 +42,7 @@
                             <div class="col-12 col-md-6 col-xl-4 px-0 px-md-2">
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput2" class="form-labe fs-7 text-muted">{{__('frontend.bonus.Surname')}}</label>
-                                    <input type="text" name="surname" class="form-control rounded-0 border-0 border-bottom" id="exampleFormControlInput2">
+                                    <input type="text" name="surname" wire:model="surname" class="form-control rounded-0 border-0 border-bottom" id="exampleFormControlInput2">
                                     @if($errors->has('surname'))
                                         <span style="color: red">{{ $errors->first('surname') }}</span>
                                     @endif
@@ -50,7 +51,7 @@
                             <div class="col-12 col-md-6 col-xl-4 px-0 px-md-2">
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput3" class="form-labe fs-7 text-muted">{{__('frontend.bonus.Card Barcode 8 Digits')}}</label>
-                                    <input type="number" name="card_code" class="form-control rounded-0 border-0 border-bottom" id="exampleFormControlInput3">
+                                    <input type="number" name="card_code" wire:model="card_code" class="form-control rounded-0 border-0 border-bottom" id="exampleFormControlInput3">
                                     @if($errors->has('card_code'))
                                         <span style="color: red">{{ $errors->first('card_code') }}</span>
                                     @endif

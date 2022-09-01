@@ -59,9 +59,11 @@
                                         <div class="shipping-cart-item title">
                                             {{__('frontend.cart.Size')}}
                                         </div>
+                                        @if(isset($orderItem->quantity))
                                         <div class="shipping-cart-item title">
                                             {{__('frontend.cart.Count')}}
                                         </div>
+                                        @endif
                                         <div class="shipping-cart-item title">
                                             {{__('frontend.cart.Total amount')}}
                                         </div>
@@ -98,10 +100,12 @@
                                             <p class="mb-3 d-block d-md-none">{{__('frontend.cart.Size')}}</p>
                                             <p class="m-0">{{$orderItem->size ?? null}}</p>
                                         </div>
+                                            @if(isset($orderItem->quantity))
                                         <div class="shipping-cart-item shop-col-quantity">
                                             <p class="mb-3 d-block d-md-none">{{__('frontend.cart.Count')}}</p>
-                                            <p>{{$orderItem->quantity ?? null}}</p>
+                                            <p class="m-0">{{$orderItem->quantity ?? null}}</p>
                                         </div>
+                                            @endif
                                         <div class="shipping-cart-item shop-col-total">
                                             <p class="mb-3 d-block d-md-none">{{__('frontend.cart.Total amount')}}</p>
                                             <div class="m-0 d-flex justify-content-between">{{$orderItem->price}} ֏<a href="#"><img src="{{asset('images/icons/cabinet/delete.svg')}}" alt=""></a></div>

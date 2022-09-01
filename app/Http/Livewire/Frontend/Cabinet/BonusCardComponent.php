@@ -16,22 +16,43 @@ class BonusCardComponent extends Component
 {
 use LivewireAlert;
 
-    public function addCard(Request $request){
+public $name;
+public $surname;
+public $card_code;
 
+    public function updated($fields)
+    {
+        $this->validateOnly($fields,[
+            'name' => 'required',
+            'surname' => 'required',
+            'card_code' => 'required|digits:8',
+        ],
+        [
+                'name.required'=> __('auth.bonus.Name required'),
+                'surname.required'=> __('auth.bonus.Surname required'),
+                'card_code.required'=> __('auth.bonus.Bonus required'),
+                'card_code.digits'=> __('auth.bonus.Bonus length required'),
+        ]);
+    }
 
-        $request->validate([
+    public function save(){
 
-                'name' => 'required',
-                'surname' => 'required',
-                'card_code' => 'required|digits:8',
-            ]);
-
+        $this->validate([
+            'name' => 'required',
+            'surname' => 'required',
+            'card_code' => 'required|digits:8',
+        ],
+        [
+            'name.required'=> __('auth.bonus.Name required'),
+            'surname.required'=> __('auth.bonus.Surname required'),
+            'card_code.required'=> __('auth.bonus.Bonus required'),
+            'card_code.digits'=> __('auth.bonus.Bonus length required'),
+        ]);
         $bonus = new BonusCard();
-        $bonus->name = $request->name;
-        $bonus->surname = $request->surname;
-        $bonus->card_code = $request->card_code;
+        $bonus->name = $this->name;
+        $bonus->surname = $this->surname;
+        $bonus->card_code = $this->card_code;
         $bonus->user_id = Auth::user()->id;
-
 
         $bonus->save();
 

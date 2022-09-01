@@ -68,6 +68,7 @@ class OrderComponent extends Component
 
         $items = Order::with('user')->orderBy('created_at','Desc')->where(function($sub_query){
             $sub_query->where('status', 'like', '%'.$this->searchTerm.'%');
+            $sub_query->orWhere('order_id', 'like', '%'.$this->searchTerm.'%');
             if ($this->start_date){
                 $sub_query->whereBetween('created_at', array($this->start_date, $this->end_date));
             }

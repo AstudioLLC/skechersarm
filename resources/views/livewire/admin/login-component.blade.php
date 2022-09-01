@@ -82,10 +82,12 @@
                                         <label>Email</label>
                                         <div class="mb-3">
                                             <input type="email" class="form-control" name="email" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
+                                            @error('email') <span class="text-danger">{{ $message }}</span>@enderror
                                         </div>
                                         <label>Password</label>
                                         <div class="mb-3">
                                             <input type="password" class="form-control" name="password" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
+                                            @error('password') <span class="text-danger">{{ $message }}</span>@enderror
                                         </div>
                                         <div class="form-check form-switch">
                                             <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>

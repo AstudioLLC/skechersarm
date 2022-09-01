@@ -33,6 +33,7 @@
                     </div>
                     <div class="mb-4">
                         <input type="password" class="form-control rounded-0 border-0 border-bottom" name="password" placeholder="{{__('auth.login.Password')}}" style="font-size: 14px;">
+                        @error('password') <span class="text-danger">{{ $message }}</span>@enderror
                     </div>
                     @if (Route::has('password.request'))
                         <a href="{{ route('password.request') }}" class="text-reset" style="font-size: 14px;">{{__('auth.login.Forgot your password')}}</a>

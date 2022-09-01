@@ -39,7 +39,7 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97584.07285783392!2d44.41852711570928!3d40.15336930086725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406aa2dab8fc8b5b%3A0x3d1479ae87da526a!2z0JXRgNC10LLQsNC9LCDQkNGA0LzQtdC90LjRjw!5e0!3m2!1sru!2s!4v1654607973209!5m2!1sru!2s" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="d-flex justify-content-end mt-4 gap-5 me-2 fw-bold">
-            <p class="m-0">Ընդամենը՝</p>
+            <p class="m-0">{{__('frontend.cart.Total')}}</p>
             <p class="m-0">{{number_format(Cart::instance('cart')->subtotal)}} <small>֏</small> </p>
         </div>
         <input type="hidden" name="subtotal" value="{{Cart::instance('cart')->subtotal}}">

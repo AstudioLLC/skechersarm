@@ -30,8 +30,6 @@ class ProductsImport implements ToCollection,WithStartRow
             $description = '{"hy":"' . $row[5] . '","ru":"' . $row[6] . '","en":"' . $row[7] . '"}';
             $slug = Str::slug($row[2]) . '-'.$row[1];
 
-
-            try {
                 DB::table('products')->updateOrInsert(
                     ['barcode' => $row[1]],
                     [
@@ -50,10 +48,6 @@ class ProductsImport implements ToCollection,WithStartRow
                 );
                 $product = Product::whereBarcode($row[1])->first();
                 $this->updateRelations($product, $row);
-//            $this->updateCriterias($product, $row);
-            }catch (\Exception $e){
-                return $e->getMessage();
-            }
 
         }
 
@@ -63,12 +57,17 @@ class ProductsImport implements ToCollection,WithStartRow
 
     protected function updateRelations($product,$row)
     {
-        if (!in_array($product->id,DB::table('category_product')->pluck('product_id')->toArray()))
-        {
-            $product->categories()->attach($row[8]);
-        }else{
-            DB::table('category_product')->where('product_id',$product->id)->update(['category_id' => $row[8]]);
+        $product->categories()->sync($row[8]);
+
+        $valls = explode(',',$row[13]);
+        foreach ($valls as $critery){
+            $product->criteries()->attach($critery,[
+                'barcode' => $row[1],
+                'count' => $row[12]
+            ]);
         }
+
+
 
     }
 //    protected function updateCriterias($product,$row)

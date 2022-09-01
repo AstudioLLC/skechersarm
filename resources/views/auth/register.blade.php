@@ -15,7 +15,7 @@
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
                     <div class="mb-4">
-                        <input type="text" class="form-control rounded-0 border-0 border-bottom" name="email" placeholder="{{__('auth.register.Email')}}" style="font-size: 14px;">
+                        <input type="text" class="form-control rounded-0 border-0 border-bottom @error('email') is-invalid @enderror" name="email" placeholder="{{__('auth.register.Email')}}" style="font-size: 14px;">
                         @error('email')
                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -23,7 +23,7 @@
                         @enderror
                     </div>
                     <div class="mb-4">
-                        <input type="password" class="form-control rounded-0 border-0 border-bottom" name="password" placeholder="{{__('auth.register.Password')}}" style="font-size: 14px;">
+                        <input type="password" class="form-control rounded-0 border-0 border-bottom @error('password') is-invalid @enderror" name="password" placeholder="{{__('auth.register.Password')}}" style="font-size: 14px;">
                         @error('password')
                         <span class="invalid-feedback" role="alert">
                            <strong>{{ $message }}</strong>
@@ -31,7 +31,12 @@
                         @enderror
                     </div>
                     <div class="mb-4">
-                        <input type="password" class="form-control rounded-0 border-0 border-bottom" name="password_confirmation" placeholder="{{__('auth.register.Repeat password')}}" style="font-size: 14px;">
+                        <input type="password" class="form-control rounded-0 border-0 border-bottom @error('password_confirmation') is-invalid @enderror" name="password_confirmation" placeholder="{{__('auth.register.Repeat password')}}" style="font-size: 14px;">
+                        @error('password_confirmation')
+                        <span class="invalid-feedback" role="alert">
+                           <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="policy">

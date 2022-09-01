@@ -46,8 +46,8 @@ Route::get('test',function (){
 
 
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect']],function() {
-
     Auth::routes(['verify' => true]);
+
     /* Special Route for Livewire with Localization routes fix  */
 
     Route::post('livewire/message/{name}', '\Livewire\Controllers\HttpConnectionHandler');

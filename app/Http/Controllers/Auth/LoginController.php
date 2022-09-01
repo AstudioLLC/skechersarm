@@ -43,15 +43,17 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
+
         $credentials = $request->validate([
             'email' => 'required|email',
+//            'password' => 'required|same:confirm_password',
             'password' => 'required',
         ],
         [
-            'email.email' => 'Введите правильную Эл.почту',
-//            'email.required' => 'Введите Эл.почту',
-//            'password.required' => ' Введите Пароль.',
-
+            'email.email' => __('auth.login.Incorrect username or password'),
+            'email.required' => __('auth.login.Fill in the field'),
+            'password.required' => __('auth.login.Fill password field'),
+//            'password.same' => __('auth.login.passwords do not match'),
         ]
 
         );
@@ -59,6 +61,7 @@ class LoginController extends Controller
         $user = Auth::getProvider()->retrieveByCredentials($credentials);
 
         if (Auth::attempt($credentials)) {
+
             if (auth()->user()->is_admin == 1) {
                 Auth::login($user, $request->get('remember'));
 
@@ -67,6 +70,9 @@ class LoginController extends Controller
                 Auth::login($user, $request->get('remember'));
 
                 //Cart::instance('cart')->store(Auth::user()->email);
+
+
+
                 return redirect()->route('cabinet.settings');
             }
         }

@@ -2,9 +2,9 @@
     <form class="form-horizontal" enctype="multipart/form-data" wire:submit.prevent="placeFastOrder" >
 
         <!-- Fast Order -->
-        @if($errors->any())
-            <h1>{{$errors}}</h1>
-        @endif
+{{--        @if($errors->any())--}}
+{{--            <h1>{{$errors}}</h1>--}}
+{{--        @endif--}}
         <div class="modal fade fast-order pe-0" id="fastOrder" tabindex="-1" aria-labelledby="fastOrderLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-md">
                 <div class="modal-content">

@@ -18,6 +18,7 @@ class Create extends Component
 
     public function mount($id)
     {
+
         $this->region_id = $id;
     }
     public function updated($fields)
@@ -38,7 +39,7 @@ class Create extends Component
         $city = new DeliveryCity();
         $city->title = $this->title;
         $city->price = $this->price;
-        $city->region_id = 1;
+        $city->region_id = $this->region_id;
 
         $city->save();
         $this->alert('success', 'Region been changed successfully');

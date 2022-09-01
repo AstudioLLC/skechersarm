@@ -34,7 +34,7 @@ trait ProductRelationships
     }
     public static function saleProducts()
     {
-        return self::class::where('other', 1)->whereActive(true)->with('categories.parentCategory.parentCategory')->get();
+        return self::class::where('other', 1)->whereActive(true)->with('categories.parentCategory.parentCategory')->limit(6)->get();
     }
 
     public static function newProducts()
@@ -82,6 +82,7 @@ trait ProductRelationships
             $e->where('count','>',0);
         })->pluck('id')->toArray();
     }
+
     public function brand()
     {
         return $this->hasOne(Brand::class,'id','brand_id');
@@ -115,6 +116,11 @@ trait ProductRelationships
     {
         $product = Product::whereId($product_id)->first();
         return $product->criteries()->pluck('barcode')->toArray();
+    }
+    public static function getQty($product_id)
+    {
+        $product = Product::whereId($product_id)->first();
+        return $product->criteries()->sum('count');
     }
     public static function hasSizes($product_id)
     {

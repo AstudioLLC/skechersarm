@@ -24,6 +24,7 @@ trait PageRelationships
     public static function seoTitle()
     {
         $page = self::class::whereUrl(request()->segment(count(request()->segments())))->first();
+
         if ($page){
             return $page->seo_title ?? $page->name;
         }

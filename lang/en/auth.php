@@ -18,41 +18,52 @@ return [
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
     'login' => [
-        'Login to social media' => 'Մուտք սոց․ ցանցերի միջոցով',
-        'Login' => 'Մուտք',
-        'Enter your password' => 'կամ մուտքագրեք ձեր գաղտնաբառը և էլ․ փոստի հասցեն',
-        'Forgot your password' => 'Մոռացե՞Լ եք գաղտնաբառը?',
-        'Register' => 'Գրանցվել',
-        'Password' => 'Գաղտնաբառ *',
-        'Name' => 'Անուն *',
-
+        'Login to social media' => 'Social login',
+        'Login' => 'Login',
+        'Enter your password' => 'or enter your email address and password',
+        'Forgot your password' => 'Forgot your password?',
+        'Register' => 'Register',
+        'Password' => 'Password *',
+        'Name' => 'Email *',
+        'Incorrect username or password'=>'Invalid login or password',
+        'Fill in the field'=>'Fill in the email address',
+        'Fill password field'=>'Fill in password',
+        'passwords do not match'=>'Passwords dont match',
     ],
-
     'register' => [
-        'data processing policy' => 'Սեղմելով «գրանցվել» կոճակը, ես համաձայնվում եմ օգտատիրոջ տվյալների մշակման քաղաքականության հետ:',
-        'Register' => 'Գրանցվել',
-        'Repeat password' => 'Գաղտնաբառի կրկնում *',
-        'Password' => 'Գաղտնաբառ *',
-        'Email' => 'Էլ. փոստ *',
+    'data processing policy' => 'By clicking the "registration" button, I agree to the users data processing policy',
+    'Register' => 'Register',
+    'Repeat password' => 'Repeat password *',
+    'Password' => 'Password *',
+    'Email' => 'Email *',
+    'password must contain at least 6 characters' => 'password must contain at least 6 characters',
 
-    ],
+    'unique' => 'Login already in use',
+    'required' => 'Fill in the field',
+    'invalid email' => 'Invalid Email',
+    'confirmed' => 'Passwords dont match',
+    'min' => 'The password must contain at least :min characters.',
+
+],
     'verify' => [
-        'Welcome to Skechersarm' => 'Բարի գալուստ Skechersarm.am',
-        'Welcome' => 'Welcome to Skechers!',
-        'Please check your email' => 'Գրանցման հաստատումն անցնելու համար խնդրում ենք ստուգել Ձեր էլ․ Հասցեն',
-        'Verify Email' => 'Ստուգեք էլ',
-
-    ],
+    'Welcome to Skechersarm' => 'Welcome to Skechersarm.am',
+    'Welcome' => 'Hello',
+    'Please check your email' => 'You have registered with Skechersarm.am. Please check your email to confirm your registration.',
+],
     'email' => [
-        'Password recovery' => 'Գաղտնաբառի վերականգնում',
-        'Send the password reset link' => 'Խնդրում ենք մուտքագրել ձեր էլ․ հասցեն, որին մենք կուղարկենք գաղտնաբառը վերականգնելու հղումը',
-        'Email' => 'Էլ․ հասցե *',
-        'Send' => 'Ուղարկել',
-        'New Password' => '',
-        'Confirm Password' => '',
-        'Confirm' => 'Հաստատել',
+    'Password recovery' => 'Reset password',
+    'Send the password reset link' => 'Enter email to get a password reset link',
+    'Email' => 'Email *',
+    'Send' => 'Send',
+    'New Password' => 'New password',
+    'Confirm Password' => 'Repeat password',
+    'Confirm' => 'Confirm',
 
-    ],
-
-
+],
+'bonus' => [
+    'Name required' => 'Enter your name',
+    'Surname required' => 'Enter last name',
+    'Bonus required' => 'Fill in the information about the bonus card',
+    'Bonus length required' => 'The bonus card must consist of 8 symbols.',
+],
 ];
